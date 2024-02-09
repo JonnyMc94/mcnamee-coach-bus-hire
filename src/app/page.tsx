@@ -1,8 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
-import { BsTelephone } from "react-icons/bs";
-import { MdMarkEmailUnread } from "react-icons/md";
-import { PiMapPinFill } from "react-icons/pi";
 import NavLink from "@/src/ui/nav-links";
 import Footer from "@/src/ui/copyright-footer";
 
