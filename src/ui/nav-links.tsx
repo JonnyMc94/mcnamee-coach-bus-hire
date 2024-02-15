@@ -50,11 +50,8 @@ export default function NavLink() {
           })}
         </ul>
       </div>
-      <div className="inline-flex items-baseline bg-[#a6c1ee] text-black rounded-full pr-10 hover:bg-[#87acec]">
-        <span className="pr-2 top-2"> Contact Us</span>
-        <span>
-          <FaArrowRight className="text-black" />
-        </span>
+      <div className="flex flex-row items-center justify-start mr-2 bg-[#a6c1ee] text-black hover:bg-[#87acec]">
+        <Link className="pl-4 pr-3 pt-2 pb-2 mr-2 bg-[#130F49] text-gray-50 font-light rounded-xl text-base flex flex-row items-center" href="/contact"> Contact Us <FaArrowRight className="text-black ml-2" /></Link>
       </div>
     </nav>
   );
