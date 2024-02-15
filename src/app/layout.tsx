@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import SmallContactBar from "@/src/ui/small-contact-bar";
 import NavLink from "@/src/ui/nav-links";
-import Footer from '@/src/ui/copyright-footer'
+import Footer from "@/src/ui/copyright-footer";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -18,11 +18,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <>
-      <SmallContactBar />
-      <NavLink /> 
+    <html lang="en">
       <body className={inter.className}>{children}</body>
-      <Footer />
-    </>
+    </html>
   );
 }
