@@ -1,5 +1,8 @@
 "use client";
 import React, { useState } from "react";
+import NavLink from "@/src/ui/nav-links";
+import Footer from "@/src/ui/copyright-footer";
+import SmallContactBar from "@/src/ui/small-contact-bar";
 
 export default function ContactUs() {
   const [fullname, setFullname] = useState("");
@@ -98,6 +101,8 @@ export default function ContactUs() {
   };
   return (
     <main>
+      <SmallContactBar />
+      <NavLink />
       <header className="p-8 grid grid-cols-1 md:grid-cols-2 gap-10 pt-10 lg:px-40 bg-blue-50 dark:bg-blue-900 h-[90vh]">
         <div className="grid grid-rows-2 mb-10 md:mt-20 mr-20">
           <div className="mb-8">
@@ -237,6 +242,7 @@ export default function ContactUs() {
           </div>
         </form>
       </header>
+      <Footer />
     </main>
   );
 }
