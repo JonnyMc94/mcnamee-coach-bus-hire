@@ -4,12 +4,11 @@ import { FaFacebookSquare } from "react-icons/fa";
 
 export default function Footer() {
   const links = [
-    { name: "Home", href: "/", text: "Navigate through our site from here." },
-    { name: "About", href: "/about", text: "Learn about McNamee Coach Hire." },
+    { name: "Home", href: "/"},
+    { name: "About", href: "/about"},
     {
       name: "Contact",
-      href: "/contact",
-      text: "Find our contact details here or use our Contact form!",
+      href: "/contact"
     },
     {
       name: "Gallery",
@@ -18,8 +17,7 @@ export default function Footer() {
     },
     {
       name: "Routes",
-      href: "/routes",
-      text: "See information about the current routes we operate.",
+      href: "/routes"
     },
   ];
 
