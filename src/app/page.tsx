@@ -2,14 +2,25 @@ import Image from "next/image";
 import NavLink from "@/src/ui/nav-links";
 import Footer from "@/src/ui/copyright-footer";
 import SmallContactBar from "@/src/ui/small-contact-bar";
-import ImageCarousel from "@/src/ui/image-carousel"
+import ImageCarousel from "@/src/ui/image-carousel";
+import Card from "@/src/ui/card";
 
 export default function Home() {
   return (
     <main>
       <SmallContactBar />
       <NavLink />
-      <ImageCarousel />      
+      <ImageCarousel />
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 m-10 justify-items-center">
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+
+      </div>
+
       <Footer />
       {/* <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
         <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
