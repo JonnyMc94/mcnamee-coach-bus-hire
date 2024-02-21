@@ -13,7 +13,7 @@ export default function ImageCarousel() {
     { src: "/coach3.png" },
   ];
 
-  const options = { loop: true, playOnInit: true, delay: 20000 };
+  const options = { loop: true, playOnInit: true, delay: 7500 };
   const [emblaRef] = useEmblaCarousel(options, [Autoplay(options)]);
 
   return (
@@ -22,7 +22,7 @@ export default function ImageCarousel() {
         {" "}
         {paths.map((data, indx) => {
           return (
-            <div className="relative h-[40vh] flex-[0_0_100%]" key={indx}>
+            <div className="relative h-[50vh] flex-[0_0_100%]" key={indx}>
               <div className="absolute z-10 ml-auto mr-auto lg:w-[50vh] md:w-[40vh] sm:w-[35vh] xsm:w-[28vh] xxsm:w-[26vh] xxxsm:w-[22vh] h-[34vh] lg:h-[28vh] md:h-[24vh] sm:h-[22vh] xsm:h-[16vh] xxsm:h-[16vh] left-0 right-0 top-32 bg-inherit">
                 <div className="flex flex-row items-center justify-start">
                   <Link
@@ -42,7 +42,12 @@ export default function ImageCarousel() {
                 </h2>
               </div>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <Image alt="" fill src={data.src} className="object-fill z-0" />
+              {/* <Image alt="" fill src={data.src} className="object-fill z-0" /> */}
+              <div
+                className="h-[50vh] lg:w-full flex-none bg-cover rounded-l text-center overflow-hidden bg-[url('/coach1.png')]"
+                style={{ backgroundImage: `url(${data.src})` }}
+                title="Woman holding a mug"
+              ></div>
             </div>
           );
         })}

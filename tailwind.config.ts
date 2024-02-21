@@ -17,7 +17,7 @@ const config: Config = {
       // },
 
       screens: {
-        "xsm": {"min": "500px", "max": "640px"},
+        "xsm": {"min": "500px", "max": "660px"},
         "xxsm": {"min": "440px", "max": "505px"},
         "xxxsm": {"min": "380px", "max": "446px"},
       },
