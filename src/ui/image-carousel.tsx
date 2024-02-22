@@ -5,6 +5,7 @@ import { FaArrowRight } from "react-icons/fa";
 import { EmblaOptionsType } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
+import React from "react";
 
 export default function ImageCarousel() {
   const paths = [

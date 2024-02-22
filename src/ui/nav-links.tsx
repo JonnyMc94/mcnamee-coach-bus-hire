@@ -15,9 +15,9 @@ export default function NavLink() {
       text: "See pictures of our current fleet.",
     },
     {
-      name: "Routes",
-      href: "/routes",
-      text: "See information about the current routes we operate.",
+      name: "Services",
+      href: "/services",
+      text: "See information about the current services we operate.",
     },
   ];
 

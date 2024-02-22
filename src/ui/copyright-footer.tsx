@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import React from "react";
 import { FaFacebookSquare } from "react-icons/fa";
 
 export default function Footer() {
@@ -16,8 +17,8 @@ export default function Footer() {
       text: "See pictures of our current fleet.",
     },
     {
-      name: "Routes",
-      href: "/routes"
+      name: "Services",
+      href: "/services"
     },
   ];
 
