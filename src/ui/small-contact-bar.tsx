@@ -14,7 +14,7 @@ export default function SmallContactBar() {
   return (
     <div className="bg-lime-400 h-4 xl:h-8 lg:h-6 ">
       <div className="flex justify-center items-end">
-        {dataSet.map((data, i) => {
+        {dataSet.map((data, i, key) => {
           const Icon = <data.icon />;
 
           return (
