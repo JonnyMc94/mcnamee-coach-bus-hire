@@ -12,6 +12,7 @@ const data = [
     details:
       "We service many routes, to schools in the North West Meath/Cavan area. Get in touch to find out more",
     src: "/schoolbus1.JPG",
+    alt: "Image of a white school bus"
   },
   {
     id: 2,
@@ -19,6 +20,7 @@ const data = [
     details:
       "From sports trips to educational trips, we cater for all class sizes!",
     src: "/2coach2.JPG",
+    alt: "Image of two coaches"
   },
   {
     id: 3,
@@ -26,6 +28,8 @@ const data = [
     details:
       "We provide a full range of transport for guests to and from accomodation and venue",
     src: "/weddingday.png",
+    alt: "Image of a bride on her wedding day"
+
   },
   {
     id: 4,
@@ -33,6 +37,7 @@ const data = [
     details:
       "We cater for all ggroup sizes so conatact us with details on your next day trip",
     src: "/whitecoach4.JPG",
+    alt: "Image of a white coach"
   },
   {
     id: 5,
@@ -40,6 +45,7 @@ const data = [
     details:
       "All main concert venues in the coutry are catered for including festivals",
     src: "/concertimage.png",
+    alt: "Generic image of a concert"
   },
   {
     id: 6,
@@ -47,6 +53,7 @@ const data = [
     details:
       "Whether you're heading to a premier destination or [pub crawling, we cater for all types of events. Get in touch!",
     src: "/henparty.png",
+    alt: "Hen Party image"
   },
   {
     id: 7,
@@ -54,6 +61,7 @@ const data = [
     details:
       "We cater for trips in Ireland or the UK and for groups of verying sizes. Don't hesitate to get in touch!",
     src: "/crokepark.png",
+    alt: "Image of Croke Park during a game"
   },
 ];
 
@@ -73,6 +81,7 @@ export default function Services() {
               title={service.title}
               details={service.details}
               src={service.src}
+              alt={service.alt}
             />
           );
         })}

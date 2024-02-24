@@ -100,21 +100,19 @@ export default function ContactUs() {
     console.log(fullname, email, subject, message);
   };
   return (
-    <main>
-      <SmallContactBar />
-      <NavLink />
-      <header className="p-8 grid grid-cols-1 md:grid-cols-2 gap-10 pt-10 lg:px-40 bg-blue-50 dark:bg-blue-900 h-[90vh]">
+    <main className="p-14">
+      <header className="p-8 grid grid-cols-1 md:grid-cols-2 gap-10 pt-10 lg:px-40 bg-inherit h-[90vh]">
         <div className="grid grid-rows-2 mb-10 md:mt-20 mr-20">
           <div className="mb-8">
             <div className="badge bg-green-500 inline-block rounded-xl mb-8">
-              <p className="font-light text-2xl px-4 py-1 text-gray-50">
+              <p className="font-light text-2xl px-4 py-1 text-slate-800">
                 Contact Us
               </p>
             </div>
-            <h1 className="text-4xl font-bold mt-4 dark:text-gray-50 text-gray-700">
-              No run to big or small!
+            <h1 className="text-4xl font-bold mt-4 text-slate-800">
+              No run too big or small!
             </h1>
-            <p className="text-sm text-gray-700 mt-4 font-light dark:text-gray-200">
+            <p className="text-sm text-slate-800 mt-4 font-light">
               We would love to hear from you. Please reach out to us.
             </p>
           </div>
@@ -127,7 +125,7 @@ export default function ContactUs() {
         </div>
         <form
           onSubmit={handleSubmit}
-          className="rounded-lg shadow-xl flex flex-col px-8 py-8 mt-16 bg-white dark:bg-blue-500 h-[70vh]"
+          className="rounded-lg shadow-xl flex flex-col p-8 bg-white dark:bg-blue-500 h-[80vh] mb-10 md:mt-20 mr-20"
         >
           <h1 className="text-2xl font-bold dark:text-gray-50">
             Send a message
@@ -147,7 +145,7 @@ export default function ContactUs() {
               setFullname(e.target.value);
             }}
             name="fullname"
-            className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500"
+            className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-slate-800"
           />
           {/* {errors?.fullname && (
             <p className="text-red-500">Fullname cannot be empty.</p>
@@ -166,7 +164,7 @@ export default function ContactUs() {
             onChange={(e) => {
               setEmail(e.target.value);
             }}
-            className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500"
+            className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-slate-800"
           />
           {/* {errors?.email && (
             <p className="text-red-500">Email cannot be empty.</p>
@@ -185,7 +183,7 @@ export default function ContactUs() {
             onChange={(e) => {
               setSubject(e.target.value);
             }}
-            className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500"
+            className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-slate-800"
           />
           {/* {errors?.subject && (
             <p className="text-red-500">Subject cannot be empty.</p>
@@ -202,7 +200,7 @@ export default function ContactUs() {
             onChange={(e) => {
               setMessage(e.target.value);
             }}
-            className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500"
+            className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-slate-800"
           ></textarea>
           {/* {errors?.message && (
             <p className="text-red-500">Message body cannot be empty.</p>
@@ -210,7 +208,7 @@ export default function ContactUs() {
           <div className="flex flex-row items-center justify-start">
             <button
               type="submit"
-              className="px-10 mt-16 py-2 bg-[#130F49] text-gray-50 font-light rounded-md text-lg flex flex-row items-center"
+              className="px-10 mt-10 py-2 bg-[#130F49] text-gray-50 font-light rounded-md text-lg flex flex-row items-center"
             >
               {buttonText}
               <svg
@@ -242,7 +240,6 @@ export default function ContactUs() {
           </div>
         </form>
       </header>
-      <Footer />
     </main>
   );
 }
