@@ -10,8 +10,8 @@ import "@/src/app/globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Contact Us",
-  description: "You can contact us with any queries here",
+  title: "Servies",
+  description: "Details of the services we currently service",
 };
 
 export default function RootLayout({
@@ -21,12 +21,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className}`}>
+      <body className={inter.className}>
         <SmallContactBar />
         <NavLink />
         <ImageCarousel />
         {children}
-        <Footer />{" "}
+        <Footer />
       </body>
     </html>
   );

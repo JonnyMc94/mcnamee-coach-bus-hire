@@ -15,16 +15,16 @@ export default function NavLink() {
       text: "See pictures of our current fleet.",
     },
     {
-      name: "Routes",
-      href: "/routes",
-      text: "See information about the current routes we operate.",
+      name: "Services",
+      href: "/services",
+      text: "See information about the current services we operate.",
     },
   ];
 
   const pathname = usePathname();
 
   return (
-    <nav className="flex justify-between items-center w-[100%] bg-[#a6c1ee]">
+    <nav className="flex justify-between items-center w-[100%] h-[8vh] bg-[#a6c1ee]">
       <div className="pl-10">
         <img
           className="w-16 cursor-pointer "
@@ -37,7 +37,7 @@ export default function NavLink() {
           {links.map((data, id) => {
             return (
               <li key={id}>
-                <a className="hover:text-gray-500" href={data.href}>
+                <a className="hover:text-gray-500 text-xl" href={data.href}>
                   {data.name}
                 </a>
               </li>

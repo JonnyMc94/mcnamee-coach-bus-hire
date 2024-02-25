@@ -5,6 +5,7 @@ import { FaArrowRight } from "react-icons/fa";
 import { EmblaOptionsType } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
+import React from "react";
 
 export default function ImageCarousel() {
   const paths = [
@@ -44,7 +45,7 @@ export default function ImageCarousel() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               {/* <Image alt="" fill src={data.src} className="object-fill z-0" /> */}
               <div
-                className="h-[50vh] lg:w-full flex-none bg-cover rounded-l text-center overflow-hidden bg-[url('/coach1.png')]"
+                className="h-[50vh] lg:w-full flex-none bg-cover rounded-l text-center overflow-hidden bg-center"
                 style={{ backgroundImage: `url(${data.src})` }}
                 title="Woman holding a mug"
               ></div>
