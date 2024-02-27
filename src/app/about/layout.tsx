@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: "You can find out more about our company here",
 };
 
-export default function RootLayout({
+export default function AboutLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;

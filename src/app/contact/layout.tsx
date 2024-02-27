@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   description: "You can contact us with any queries here",
 };
 
-export default function RootLayout({
+export default function ContactLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
