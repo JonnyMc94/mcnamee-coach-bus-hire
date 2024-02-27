@@ -18,13 +18,13 @@ export default function Home() {
           McNamee Coach & Mini-Bus Hire
         </h1>
         <div className="h-2 border-t-0 bg-black"></div>
-        <p className="mb-10 mt-10 p-10 text-xl text-slate-600 flex justify-center items-center text-center">
+        <p className="w-[80vh] mb-10 mt-10 p-10 text-xl text-slate-600 flex justify-center items-center text-center">
           We offer a wide range of services and cater to any group size. Scroll
           down to check them out and don't hesitate to contact us for more
           details!{" "}
         </p>
       </div>
-      <div className="flex flex-wrap justify-center mt-10 mb-16 gap-10">
+      <div className="flex flex-wrap justify-center mt-10 mb-16 gap-6">
         <HomeCard id={1} title={"About"} details={"See some more information about our company"} src={"/2coachnightime.JPG"} alt={"Two coaches at nightitme"} href={"/about"}/>
         <HomeCard id={2} title={"Services"} details={"See information on the variety of services we offer"} src={"/greycoach.png"} alt={"A photo of a grey coach"} href={"/services"}/>
         <HomeCard id={3} title={"Gallery"} details={"See images of our fleet."} src={"/2coach4.JPG"} alt={"A photo of a bus fleet lineup"} href={"/gallery"}/>

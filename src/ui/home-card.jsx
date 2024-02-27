@@ -3,7 +3,7 @@ import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
 
 export default function HomeCard(props) {
-  const { id, title, details, src, key, alt } = props;
+  const { id, title, details, src, key, alt, href } = props;
 
   return (
     <div className="block w-[35vh] m-10 shadow-2xl rounded-lg transition-all duration-700 hover:scale-110 bg-blue-400">
@@ -19,7 +19,7 @@ export default function HomeCard(props) {
         <div className="flex flex-row items-center justify-start mr-2">
           <Link
             className="pl-4 pr-3 pt-2 pb-2 mr-2 bg-blue-700 text-gray-50 font-light rounded-xl text-base flex flex-row items-center"
-            href="/contact"
+            href={href}
           >
             {" "}
             {title} <FaArrowRight className="text-white ml-2" />
