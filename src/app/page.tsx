@@ -13,7 +13,7 @@ export default function Home() {
       <SmallContactBar />
       <NavLink />
       <ImageCarousel />
-      <div className="h-[15vh] w-1/3 sm:w-auto md:w-full lg:w-32 xl:w-3/4 m-24 flex flex-col items-center justify-center divide-y-2 divide-slate-600">
+      <div className="h-[10vh] m-24 flex flex-col items-center justify-center divide-y-2 divide-slate-600">
         <h1 className="mt-10 pt-16 text-5xl text-slate-600 flex justify-center items-center text-center">
           McNamee Coach & Mini-Bus Hire
         </h1>

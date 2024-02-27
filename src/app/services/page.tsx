@@ -51,7 +51,7 @@ const data = [
     id: 6,
     title: "Hens & Stags",
     details:
-      "Whether you're heading to a premier destination or [pub crawling, we cater for all types of events. Get in touch!",
+      "Whether you're heading to a premier destination or pub crawling, we cater for all types of events. Get in touch!",
     src: "/henparty.png",
     alt: "Hen Party image"
   },
@@ -67,13 +67,13 @@ const data = [
 
 export default function Services() {
   return (
-    <main className="p-14">
-      <div className="h-[15vh] w-full m-10 flex flex-col items-center justify-center divide-y-2 divide-slate-600">
-        <h1 className="mt-10 text-7xl text-slate-600">SERVICES</h1>
+    <main className="p-10">
+      <div className="h-[15vh] mt-16 mb-10 flex flex-col items-center justify-center divide-y-2 divide-slate-600">
+        <h1 className="mt-10 text-7xl text-slate-600 text-center">Services</h1>
         <div className="h-2 border-t-0 bg-black"></div>
-        <p className="mb-10 mt-10 p-10 text-xl text-slate-600">We offer a wide range of services and cater to any group size. Scroll down to check them out and don't hesitate to contact us for more details! </p>
+        <p className="w-[80vh] mb-10 mt-10 p-10 text-xl text-center text-slate-600">We offer a wide range of services and cater to any group size. Scroll down to check them out and don't hesitate to contact us for more details! </p>
       </div>
-      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 m-10 justify-items-center">
+      <div className="grid grid-cols-1 mt-28 gap-8 sm:grid-cols-2 m-10 justify-items-center">
         {data.map((service) => {
           return (
             <Card
