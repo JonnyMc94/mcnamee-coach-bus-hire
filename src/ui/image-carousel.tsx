@@ -27,12 +27,12 @@ export default function ImageCarousel() {
               <div className="absolute z-10 ml-auto mr-auto lg:w-[50vh] md:w-[40vh] sm:w-[35vh] xsm:w-[28vh] xxsm:w-[26vh] xxxsm:w-[22vh] h-[34vh] lg:h-[28vh] md:h-[24vh] sm:h-[22vh] xsm:h-[16vh] xxsm:h-[16vh] left-0 right-0 top-32 bg-inherit">
                 <div className="flex flex-row items-center justify-start">
                   <Link
-                    className="pl-4 pr-3 pt-2 pb-2 mr-2 bg-[#130F49] text-gray-50 font-light rounded-xl lg:text-2xl md:text-xl sm:text-xl xsm:text-xl flex"
+                    className="pl-4 pr-3 pt-2 pb-2 mr-2 bg-blue-700 text-gray-50 font-light rounded-xl lg:text-2xl md:text-xl sm:text-xl xsm:text-xl flex"
                     href="/contact"
                   >
                     {" "}
                     Contact Us
-                    <FaArrowRight className="text-black ml-2 m-1 lg:text-2xl md:text-xl " />
+                    <FaArrowRight className="text-white ml-2 m-1 lg:text-2xl md:text-xl " />
                   </Link>
                 </div>
                 <h2 className="lg:text-6xl md:text-4xl sm:text-4xl xsm:text-2xl xxsm:text-2xl xxxsm:text-base text-white font-extrabold mt-8 justify-center">

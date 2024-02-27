@@ -24,7 +24,7 @@ export default function NavLink() {
   const pathname = usePathname();
 
   return (
-    <nav className="flex justify-between items-center w-[100%] h-[8vh] bg-[#a6c1ee]">
+    <nav className="flex justify-between items-center w-[100%] h-[8vh] bg-blue-400">
       <div className="pl-10">
         <img
           className="w-16 cursor-pointer "
@@ -45,13 +45,13 @@ export default function NavLink() {
           })}
         </ul>
       </div>
-      <div className="flex flex-row items-center justify-start mr-2 bg-[#a6c1ee] text-black hover:bg-[#87acec]">
+      <div className="flex flex-row items-center justify-start mr-2 text-black">
         <Link
-          className="pl-4 pr-3 pt-2 pb-2 mr-2 bg-[#130F49] text-gray-50 font-light rounded-xl text-base flex flex-row items-center"
+          className="pl-4 pr-3 pt-2 pb-2 mr-2 bg-blue-700 text-gray-50 font-light rounded-xl text-base flex flex-row items-center"
           href="/contact"
         >
           {" "}
-          Contact Us <FaArrowRight className="text-black ml-2" />
+          Contact Us <FaArrowRight className="text-white ml-2" />
         </Link>
       </div>
     </nav>
