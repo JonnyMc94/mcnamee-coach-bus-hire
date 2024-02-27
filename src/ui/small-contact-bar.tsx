@@ -12,13 +12,13 @@ export default function SmallContactBar() {
   ];
 
   return (
-    <div className="bg-lime-400 h-4 xl:h-8 lg:h-6 ">
+    <div className="bg-blue-700 h-4 xl:h-8 lg:h-6 ">
       <div className="flex justify-center items-end">
         {dataSet.map((data, i, key) => {
           const Icon = <data.icon />;
 
           return (
-            <div className="inline-flex xl:text-lg lg:text-base md:text-sm sm:text-xs xsm:text-vsm xxsm:text-vvsm xxxsm:text-vvvsm">
+            <div className="inline-flex xl:text-lg lg:text-base md:text-sm sm:text-xs xsm:text-vsm xxsm:text-vvsm xxxsm:text-vvvsm text-white">
               <span className="pr-2 pt-1" key={i}>
                 {Icon}
               </span>
