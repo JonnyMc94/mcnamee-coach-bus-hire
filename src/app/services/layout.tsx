@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   description: "Details of the services we currently service",
 };
 
-export default function RootLayout({
+export default function ServicesLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
