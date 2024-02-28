@@ -24,7 +24,7 @@ export default function ImageCarousel() {
         {" "}
         {paths.map((data, indx) => {
           return (
-            <div className="relative h-[55vh] flex-[0_0_100%]" key={indx}>
+            <div className="relative h-[65vh] flex-[0_0_100%]" key={indx}>
               <div className="absolute z-10 ml-auto mr-auto lg:w-[50vh] md:w-[40vh] sm:w-[35vh] xsm:w-[28vh] xxsm:w-[26vh] xxxsm:w-[22vh] h-[34vh] lg:h-[28vh] md:h-[24vh] sm:h-[22vh] xsm:h-[16vh] xxsm:h-[16vh] left-0 right-0 top-32 bg-inherit">
                 <div className="flex flex-row items-center justify-start">
                   <Link
