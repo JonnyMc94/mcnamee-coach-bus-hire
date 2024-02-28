@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# McNamee Coach and Bus Hire Website
+
+Welcome to the McNamee Coach and Bus Hire website repository! This project is designed for a coach and mini bus hire company, providing information about the services offered, fleet details, and more.
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Features](#features)
+- [Getting Started](#getting-started)
+  - [Clone the Repository](#clone-the-repository)
+  - [Navigate to the Project Directory](#navigate-to-the-project-directory)
+  - [Install Dependencies](#install-dependencies)
+  - [Run the Development Server](#run-the-development-server)
+  - [Open in Your Browser](#open-in-your-browser)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Overview
+
+This website serves as the online presence for McNamee Coach and Bus Hire, a family-run business specializing in coach and mini bus transportation services. The site provides an overview of the company, details about the fleet, and contact information for inquiries and quotes.
+
+## Features
+
+- **Homepage:** A welcoming landing page with key information about the company and its services.
+- **About Us:** Learn more about McNamee Coach and Bus Hire, its history, and values.
+- **Fleet:** Explore the diverse range of vehicles available for hire, from 4-seater cars to 72-seater coaches.
+- **Services:** Details about the specific services offered, such as school transport, trips, airport transfers, and more.
+- **Contact:** A section with contact details and a form for inquiries and quotes.
 
 ## Getting Started
 
-First, run the development server:
+### Clone the Repository
 
 ```bash
+git clone https://github.com/JonnyMc94/mcnamee-coach-bus-hire.git
+
+cd mcnamee-coach-bus-hire
+
+# Assuming you have Node.js and npm installed
+npm install
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
 ```
+## Open in Your Browser
+Open your browser and go to http://localhost:3000 to view the website.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Usage
+Visit the live website: McNamee Coach and Bus Hire
+Contributing
+Contributions are welcome! If you find any issues or have suggestions for improvement, please feel free to open an issue or create a pull request.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## License
+This project is licensed under the MIT License.
