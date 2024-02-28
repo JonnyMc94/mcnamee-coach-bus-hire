@@ -1,14 +1,44 @@
-import { Metadata } from 'next';
- 
+import { Metadata } from "next";
+import Image from "next/image";
+import Footer from "@/src//ui/copyright-footer";
+
 export const metadata: Metadata = {
-  title: 'About',
+  title: "About",
 };
- 
+
 export default function AboutPage() {
   return (
-    <main className="flex items-center justify-center md:h-svh">
-      <div className="relative mx-auto flex w-full max-w-[400px] flex-col space-y-2.5 p-4 md:-mt-32">
-        About
+    <main className="">
+      <div className="container mx-auto p-4 lg:p-8">
+        <div className="text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl text-center flex flex-col items-center justify-center divide-slate-600">
+          <h1 className="mt-4 lg:mt-10 text-2xl lg:text-4xl xl:text-5xl 2xl:text-6xl text-slate-600 text-center">
+            About Us
+          </h1>
+          <div className="h-2 border-t-2 border-slate-600 w-1/2 lg:w-full mt-14"></div>
+          <p className="w-[80vh] p-10 text-xl text-center text-slate-600"></p>
+        </div>
+        <div className="flex flex-col items-center lg:flex-row lg:justify-center lg:space-x-8 mb-10">
+          <img
+            src="/coach1.png"
+            alt="McNamee Coach and Bus Hire"
+            className="w-full lg:w-1/3 mb-14 lg:mb-0 rounded-lg"
+          />
+          <div className="lg:w-1/3 md:w-1/2 sm:w-full lg:mt-0 md:mt-8 sm:mt-4 lg:ml-12">
+            <p className="text-base lg:text-lg">
+              McNamee Coach and Bus Hire is a family-run business with a modern
+              fleet. Our fleet consists of vehicles ranging from 4 seats to 72
+              seater coaches. All of our vehicles are maintained inside and out
+              to the highest standards, and our drivers are very experienced.
+            </p>
+            <p className="text-base lg:text-lg mt-8">
+              We specialize in school transport and trips, hen/stag parties,
+              airport transfers, sports trips, and more.
+            </p>
+            <p className="text-base lg:text-lg mt-8">
+              Give us a call today for a quote. No job is too big or small.
+            </p>
+          </div>
+        </div>
       </div>
     </main>
   );
