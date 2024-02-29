@@ -100,19 +100,19 @@ export default function ContactUs() {
     console.log(fullname, email, subject, message);
   };
   return (
-    <main className="p-14">
-      <header className="p-8 grid grid-cols-1 md:grid-cols-2 gap-10 pt-10 lg:px-40 bg-inherit h-[90vh]">
-        <div className="grid grid-rows-2 mb-10 md:mt-20 mr-20">
-          <div className="mb-8">
-            <div className="badge bg-green-500 inline-block rounded-xl mb-8">
-              <p className="font-light text-2xl px-4 py-1 text-slate-800">
+    <main className="p-5 sm:p-14">
+      <header className="p-4 sm:p-8 grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-10 pt-4 sm:pt-10 lg:px-8 xl:px-20 bg-inherit h-auto sm:h-[90vh]">
+        <div className="grid grid-rows-2 mb-4 sm:mb-10 md:mt-10 sm:mt-20 lg:mr-4 xl:mr-20">
+          <div className="mb-4 sm:mb-8">
+            <div className="badge bg-green-500 inline-block rounded-xl mb-4 sm:mb-8">
+              <p className="font-light text-lg sm:text-2xl px-2 sm:px-4 py-1 text-slate-800">
                 Contact Us
               </p>
             </div>
-            <h1 className="text-4xl font-bold mt-4 text-slate-800">
+            <h1 className="text-2xl sm:text-4xl font-bold mt-2 sm:mt-4 text-slate-800">
               No run too big or small!
             </h1>
-            <p className="text-sm text-slate-800 mt-4 font-light">
+            <p className="text-sm sm:text-base text-slate-800 mt-2 sm:mt-4 font-light">
               We would love to hear from you. Please reach out to us.
             </p>
           </div>
@@ -120,20 +120,21 @@ export default function ContactUs() {
             <img
               src="https://t4.ftcdn.net/jpg/00/15/53/79/360_F_15537925_5qUqgBbDSQHCI5DeP7M0z88ouNIHdeKY.jpg"
               alt=""
+              className="w-full"
             />
           </div>
         </div>
         <form
           onSubmit={handleSubmit}
-          className="rounded-lg shadow-xl flex flex-col p-8 bg-white dark:bg-blue-500 h-[80vh] mb-10 md:mt-20 mr-20"
+          className="rounded-lg shadow-xl flex flex-col p-4 sm:p-8 bg-white dark:bg-blue-500 h-auto sm:h-[80vh] mb-4 sm:mb-10 md:mt-10 sm:mt-20 lg:mr-4 xl:mr-20"
         >
-          <h1 className="text-2xl font-bold dark:text-gray-50">
+          <h1 className="text-xl sm:text-2xl font-bold dark:text-gray-50">
             Send a message
           </h1>
 
           <label
             htmlFor="fullname"
-            className="text-gray-500 font-light mt-16 dark:text-gray-50"
+            className="text-gray-500 font-light mt-4 sm:mt-16 dark:text-gray-50"
           >
             Full name
             <span className="text-red-500 dark:text-gray-50 pl-2">*</span>
@@ -148,12 +149,12 @@ export default function ContactUs() {
             className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-slate-800"
           />
           {/* {errors?.fullname && (
-            <p className="text-red-500">Fullname cannot be empty.</p>
-          )} */}
+    <p className="text-red-500">Fullname cannot be empty.</p>
+  )} */}
 
           <label
             htmlFor="email"
-            className="text-gray-500 font-light mt-16 dark:text-gray-50"
+            className="text-gray-500 font-light mt-4 sm:mt-16 dark:text-gray-50"
           >
             E-mail<span className="text-red-500 pl-2">*</span>
           </label>
@@ -167,12 +168,12 @@ export default function ContactUs() {
             className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-slate-800"
           />
           {/* {errors?.email && (
-            <p className="text-red-500">Email cannot be empty.</p>
-          )} */}
+    <p className="text-red-500">Email cannot be empty.</p>
+  )} */}
 
           <label
             htmlFor="subject"
-            className="text-gray-500 font-light mt-16 dark:text-gray-50"
+            className="text-gray-500 font-light mt-4 sm:mt-16 dark:text-gray-50"
           >
             Subject<span className="text-red-500 pl-2">*</span>
           </label>
@@ -186,11 +187,11 @@ export default function ContactUs() {
             className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-slate-800"
           />
           {/* {errors?.subject && (
-            <p className="text-red-500">Subject cannot be empty.</p>
-          )} */}
+    <p className="text-red-500">Subject cannot be empty.</p>
+  )} */}
           <label
             htmlFor="message"
-            className="text-gray-500 font-light mt-16 dark:text-gray-50"
+            className="text-gray-500 font-light mt-4 sm:mt-16 dark:text-gray-50"
           >
             Message<span className="text-red-500 pl-2">*</span>
           </label>
@@ -203,12 +204,12 @@ export default function ContactUs() {
             className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-slate-800"
           ></textarea>
           {/* {errors?.message && (
-            <p className="text-red-500">Message body cannot be empty.</p>
-          )} */}
+    <p className="text-red-500">Message body cannot be empty.</p>
+  )} */}
           <div className="flex flex-row items-center justify-start">
             <button
               type="submit"
-              className="px-10 mt-10 py-2 bg-[#130F49] text-gray-50 font-light rounded-md text-lg flex flex-row items-center"
+              className="px-6 sm:px-10 mt-4 sm:mt-10 py-2 bg-[#130F49] text-gray-50 font-light rounded-md text-base sm:text-lg flex flex-row items-center"
             >
               {buttonText}
               <svg
@@ -229,7 +230,7 @@ export default function ContactUs() {
           <div className="text-left">
             {showSuccessMessage && (
               <p className="text-green-500 font-semibold text-sm my-2">
-                Thankyou! Your Message has been delivered.
+                Thank you! Your Message has been delivered.
               </p>
             )}
             {showFailureMessage && (
