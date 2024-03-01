@@ -5,11 +5,11 @@ import { FaFacebookSquare } from "react-icons/fa";
 
 export default function Footer() {
   const links = [
-    { name: "Home", href: "/"},
-    { name: "About", href: "/about"},
+    { name: "Home", href: "/" },
+    { name: "About", href: "/about" },
     {
       name: "Contact",
-      href: "/contact"
+      href: "/contact",
     },
     {
       name: "Gallery",
@@ -18,41 +18,45 @@ export default function Footer() {
     },
     {
       name: "Services",
-      href: "/services"
+      href: "/services",
     },
   ];
 
   return (
-    <footer className="w-full h-20 p-4 bg-black border-t border-gray-200 shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800 dark:border-gray-600">
-      <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
-        © 2023{" "}
-        <a href="http://localhost:3000/" className="hover:underline pr-4">
-          McNamee Coach Hire™
-        </a>
-        All Rights Reserved.
-      </span>
-      <div className="inline-flex text-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
+    <footer className="w-full p-4 bg-black border-t border-gray-200 shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800 dark:border-gray-600">
+      <div className="md:flex md:items-center">
+        <span className="text-sm text-gray-500 block mb-2 md:mb-0 sm:text-center dark:text-gray-400">
+          <span>&copy; 2023</span>{" "}
+          <a
+            href="http://localhost:3000/"
+            className="hover:underline mr-2" 
+            title="McNamee Coach Hire"
+          >
+            McNamee Coach Hire™
+          </a>
+          All Rights Reserved.
+        </span>
+      </div>
+      <div className="flex items-center ml-auto">
         <Link
-          className="hover:underline float-left text-4xl pr-4"
+          className="hover:underline inline-block mb-2 mr-2 md:mb-0 md:me-6 text-gray-500 dark:text-gray-400"
           href="https://www.facebook.com/p/McNamee-mini-bus-coach-hire-100063576433712/"
           target="_blank"
           rel="noopener noreferrer"
+          title="Facebook"
         >
-          <FaFacebookSquare />
+          <FaFacebookSquare className="text-3xl md:text-4xl"/>
         </Link>
-        <div className="pt-2">
-          {links.map((data, id) => {
-            return (
-              <Link
-                className="hover:underline me-4 md:me-6"
-                href={data.href}
-                key={id}
-              >
-                {data.name}
-              </Link>
-            );
-          })}
-        </div>
+        {links.map((data, id) => (
+          <Link
+            className="hover:underline inline-block mb-2 md:mb-0 md:me-6 mr-2 text-gray-500 dark:text-gray-400"
+            href={data.href}
+            key={id}
+            title={data.name}
+          >
+            {data.name}
+          </Link>
+        ))}
       </div>
     </footer>
   );

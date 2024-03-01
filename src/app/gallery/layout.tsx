@@ -22,7 +22,7 @@ export default function GalleryLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} flex flex-col min-h-svh`}>
+      <body className={inter.className}>
         <SmallContactBar />
         <NavLink />
         {children}

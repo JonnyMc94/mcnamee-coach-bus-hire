@@ -110,10 +110,10 @@ const data = [
 
 export default function GalleryPage() {
   return (
-    <main className="flex-grow items-center justify-center md:h-svh mb-20 p-10">
+    <main className="flex-grow items-center justify-center md:h-svh mb-10 p-6">
       <div className="bg-white min-h-75svh w-full p-8 sm:p-10 lg:p-12">
-        <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
+        <div className="mx-auto max-w-screen-4xl md:px-8">
+          <div className="grid grid-cols-3 gap-4 md:gap-6 xl:gap-8">
             {/* <!-- image - start --> */}
             {data.map((img) => {
               return (
