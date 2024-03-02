@@ -3,6 +3,9 @@ import React, { useState } from "react";
 import NavLink from "@/src/ui/nav-links";
 import Footer from "@/src/ui/copyright-footer";
 import SmallContactBar from "@/src/ui/small-contact-bar";
+import { BsTelephone } from "react-icons/bs";
+import { MdMarkEmailUnread } from "react-icons/md";
+import { PiMapPinFill } from "react-icons/pi";
 
 export default function ContactUs() {
   const [fullname, setFullname] = useState("");
@@ -18,6 +21,12 @@ export default function ContactUs() {
 
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const [showFailureMessage, setShowFailureMessage] = useState(false);
+
+  const dataSet = [
+    { info: "+353 (85) 124 4312", icon: BsTelephone },
+    { info: "mcnameecoachhire@gmail.com", icon: MdMarkEmailUnread },
+    { info: "Stoney Road, Oldcastle, Co Meath", icon: PiMapPinFill },
+  ];
 
   type TempErrors = {
     fullname: boolean;
@@ -115,6 +124,23 @@ export default function ContactUs() {
             <p className="text-sm sm:text-base text-slate-800 mt-2 sm:mt-4 font-light">
               We would love to hear from you. Please reach out to us.
             </p>
+            <div className="">
+            {dataSet.map((data, i, key) => {
+              const Icon = <data.icon />;
+
+              return (
+                <div className="inline-flex text-sm sm:text-base text-slate-800 mt-2 sm:mt-4 font-light">
+                  <span className="pr-2 pt-1 text-xl" key={i}>
+                    {Icon}
+                  </span>
+                  <span className="pr-6 mt-0.5" key={i}>
+                    {" "}
+                    {data.info}{" "}
+                  </span>
+                </div>
+              );
+            })}
+            </div>
           </div>
           <div>
             <img
