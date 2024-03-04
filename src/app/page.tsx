@@ -1,10 +1,10 @@
 import Image from "next/image";
 
-import NavLink from "@/src/ui/nav-links";
-import Footer from "@/src/ui/copyright-footer";
-import SmallContactBar from "@/src/ui/small-contact-bar";
-import ImageCarousel from "@/src/ui/image-carousel";
-import HomeCard from "@/src/ui/home-card";
+import NavLink from "@/src/components/nav-links";
+import Footer from "@/src/components/copyright-footer";
+import SmallContactBar from "@/src/components/small-contact-bar";
+import ImageCarousel from "@/src/components/image-carousel";
+import HomeCard from "@/src/components/home-card";
 import React from "react";
 
 export default function Home() {

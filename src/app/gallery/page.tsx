@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import Footer from "@/src//ui/copyright-footer";
+import Footer from "@/src/components/copyright-footer";
 
 export const metadata: Metadata = {
   title: "Gallery",
