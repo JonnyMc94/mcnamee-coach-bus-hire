@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { FaWhatsapp } from "react-icons/fa6";

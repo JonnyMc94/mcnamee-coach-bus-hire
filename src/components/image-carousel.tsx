@@ -19,7 +19,7 @@ export default function ImageCarousel() {
   const [emblaRef] = useEmblaCarousel(options, [Autoplay(options)]);
 
   return (
-    <div className="relative overflow-hidden"  ref={emblaRef}>
+    <div className="relative overflow-hidden" ref={emblaRef}>
       <div className="flex">
         {paths.map((data, indx) => (
           <div className="relative flex-shrink-0 h-[65vh] w-full" key={indx}>
@@ -29,6 +29,7 @@ export default function ImageCarousel() {
               src={data.src}
               className="absolute inset-0 object-cover w-full h-full"
             />
+            <div className="overlay absolute inset-0 bg-black opacity-50"></div>
             <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
               <div className="flex flex-row items-center justify-start">
                 <Link
@@ -51,3 +52,4 @@ export default function ImageCarousel() {
     </div>
   );
 }
+
