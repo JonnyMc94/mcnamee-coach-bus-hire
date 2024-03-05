@@ -1,8 +1,8 @@
 "use client";
 import React, { useState } from "react";
-import NavLink from "@/src/ui/nav-links";
-import Footer from "@/src/ui/copyright-footer";
-import SmallContactBar from "@/src/ui/small-contact-bar";
+import NavLink from "@/src/components/nav-links";
+import Footer from "@/src/components/copyright-footer";
+import SmallContactBar from "@/src/components/small-contact-bar";
 import { BsTelephone } from "react-icons/bs";
 import { MdMarkEmailUnread } from "react-icons/md";
 import { PiMapPinFill } from "react-icons/pi";

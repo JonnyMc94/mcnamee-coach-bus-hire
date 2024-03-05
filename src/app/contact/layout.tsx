@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import NavLink from "@/src/ui/nav-links";
-import Footer from "@/src//ui/copyright-footer";
-import SmallContactBar from "@/src/ui/small-contact-bar";
-import ImageCarousel from "@/src/ui/image-carousel";
-import Card from "@/src/ui/card";
+import NavLink from "@/src/components/nav-links";
+import Footer from "@/src/components/copyright-footer";
+import SmallContactBar from "@/src/components/small-contact-bar";
+import ImageCarousel from "@/src/components/image-carousel";
+import WhatsappChat from '@/src/components/whatsapp-chat';
+import Card from "@/src/components/card";
 import "@/src/app/globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -25,6 +26,7 @@ export default function ContactLayout({
         <SmallContactBar />
         <NavLink />
         <ImageCarousel />
+        <WhatsappChat/>
         {children}
         <Footer />{" "}
       </body>
