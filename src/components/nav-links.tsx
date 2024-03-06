@@ -32,12 +32,19 @@ export default function NavLink() {
 
   return (
     <nav className="flex justify-between items-center w-[100%] h-[8vh] bg-blue-400">
-      <div className="pl-10">
-        <img
-          className="w-16 cursor-pointer "
-          src="https://cdn-icons-png.flaticon.com/512/5968/5968204.png"
-          alt="..."
-        />
+      <div className="pl-[35px]">
+        <h1 className="absolute z-10 flex flex-col top-[10px] left-[62px] md:left-14 md:top-9">
+          {" "}
+          <span className="font-serif font-extrabold text-base md:text-2xl ml-8 md:ml-12">
+            McNamee{" "}
+          </span>
+          <span className="font-serif font-extrabold text-base md:text-2xl">
+            Coach & Bus Hire
+          </span>
+        </h1>
+        <div className="h-[50%] mx-auto my-auto bg-blue-400">
+          <div className="h-[55px] w-[200px] md:h-[76px] md:w-[260px] bg-white rounded-[50%]"></div>
+        </div>
       </div>
       <div className="nav-links duration-500 md:static absolute bg-inherit md:min-h-fit min-h-[60vh] left-0 top-[-100%] md:w-auto  w-full flex items-center px-5">
         <ul className="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-8">
@@ -86,11 +93,11 @@ export default function NavLink() {
           ></span>
         </button>
         {isOpen && (
-          <div className="md:absolute top-full left-0 md:flex justify-between items-center w-full bg-blue-400 md:bg-transparent">
+          <div className="absolute top-[66px] right-0 bg-blue-400 z-10 p-6 rounded-l">
             <ul className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
               {links.map((data, id) => (
                 <li key={id}>
-                  <a className="hover:text-gray-500 text-xl" href={data.href}>
+                  <a className="text-black text-base" href={data.href}>
                     {data.name}
                   </a>
                 </li>
