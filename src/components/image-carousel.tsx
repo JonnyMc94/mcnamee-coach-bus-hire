@@ -33,7 +33,7 @@ export default function ImageCarousel() {
             <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
               <div className="flex flex-row items-center justify-start">
                 <Link
-                  className="pl-4 pr-3 pt-2 pb-2 mr-2 bg-blue-700 text-gray-50 font-light rounded-xl text-base flex"
+                  className="pl-4 pr-3 pt-2 pb-2 mr-2 bg-blue-700 md:hidden text-gray-50 font-light rounded-xl text-base flex"
                   href="/contact"
                 >
                   Contact Us <FaArrowRight className="text-white ml-2" />
