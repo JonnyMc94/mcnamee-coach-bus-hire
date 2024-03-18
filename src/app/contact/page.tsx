@@ -7,6 +7,22 @@ import { BsTelephone } from "react-icons/bs";
 import { MdMarkEmailUnread } from "react-icons/md";
 import { PiMapPinFill } from "react-icons/pi";
 
+// Form state
+interface FormState {
+  fullname: string;
+  email: string;
+  subject: string;
+  message: string;
+}
+
+// Errors state
+interface ErrorsState {
+  fullname: boolean;
+  email: boolean;
+  subject: boolean;
+  message: boolean;
+}
+
 export default function ContactUs() {
   const [fullname, setFullname] = useState("");
   const [email, setEmail] = useState("");
@@ -14,7 +30,20 @@ export default function ContactUs() {
   const [message, setMessage] = useState("");
 
   //   Form validation
-  const [errors, setErrors] = useState({});
+  //   Errors state
+  const [errors, setErrors] = useState<ErrorsState>({
+    fullname: false,
+    email: false,
+    subject: false,
+    message: false,
+  });
+
+  const [form, setForm] = useState<FormState>({
+    fullname: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
 
   //   Setting button text
   const [buttonText, setButtonText] = useState("Send");
@@ -36,41 +65,43 @@ export default function ContactUs() {
   };
 
   const handleValidation = () => {
-    let tempErrors = {} as TempErrors;
+    let tempErrors: ErrorsState = {
+      fullname: false,
+      email: false,
+      subject: false,
+      message: false,
+    };
     let isValid = true;
 
-    if (fullname.length <= 0) {
-      tempErrors["fullname"] = true;
+    if (form.fullname.length === 0) {
+      tempErrors.fullname = true;
       isValid = false;
     }
-    if (email.length <= 0) {
-      tempErrors["email"] = true;
+    if (form.email.length === 0) {
+      tempErrors.email = true;
       isValid = false;
     }
-    if (subject.length <= 0) {
-      tempErrors["subject"] = true;
+    if (form.subject.length === 0) {
+      tempErrors.subject = true;
       isValid = false;
     }
-    if (message.length <= 0) {
-      tempErrors["message"] = true;
+    if (form.message.length === 0) {
+      tempErrors.message = true;
       isValid = false;
     }
 
     setErrors({ ...tempErrors });
-    console.log("errors", errors);
     return isValid;
   };
 
-  //   const [form, setForm] = useState(false);
-
-  const handleSubmit = async (e: any) => {
+  const handleSubmit: React.FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault();
 
     let isValidForm = handleValidation();
 
     if (isValidForm) {
       setButtonText("Sending");
-      const res = await fetch("/api/sendgrid", {
+      const res = await fetch("/api/sendemail", {
         body: JSON.stringify({
           email: email,
           fullname: fullname,
@@ -120,21 +151,21 @@ export default function ContactUs() {
               We would love to hear from you. Please reach out to us.
             </p>
             <div className="">
-            {dataSet.map((data, i, key) => {
-              const Icon = <data.icon />;
+              {dataSet.map((data, i, key) => {
+                const Icon = <data.icon />;
 
-              return (
-                <div className="inline-flex text-sm sm:text-base text-slate-800 mt-2 sm:mt-4 font-light">
-                  <span className="pr-2 pt-1 text-xl" key={i}>
-                    {Icon}
-                  </span>
-                  <span className="pr-6 mt-0.5" key={i}>
-                    {" "}
-                    {data.info}{" "}
-                  </span>
-                </div>
-              );
-            })}
+                return (
+                  <div className="inline-flex text-sm sm:text-base text-slate-800 mt-2 sm:mt-4 font-light">
+                    <span className="pr-2 pt-1 text-xl" key={i}>
+                      {Icon}
+                    </span>
+                    <span className="pr-6 mt-0.5" key={i}>
+                      {" "}
+                      {data.info}{" "}
+                    </span>
+                  </div>
+                );
+              })}
             </div>
           </div>
           <div>
@@ -169,9 +200,9 @@ export default function ContactUs() {
             name="fullname"
             className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-slate-800"
           />
-          {/* {errors?.fullname && (
-    <p className="text-red-500">Fullname cannot be empty.</p>
-  )} */}
+          {errors?.fullname && (
+            <p className="text-red-500">Fullname cannot be empty.</p>
+          )}
 
           <label
             htmlFor="email"
@@ -188,9 +219,9 @@ export default function ContactUs() {
             }}
             className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-slate-800"
           />
-          {/* {errors?.email && (
-    <p className="text-red-500">Email cannot be empty.</p>
-  )} */}
+          {errors?.email && (
+            <p className="text-red-500">Email cannot be empty.</p>
+          )}
 
           <label
             htmlFor="subject"
@@ -207,9 +238,9 @@ export default function ContactUs() {
             }}
             className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-slate-800"
           />
-          {/* {errors?.subject && (
-    <p className="text-red-500">Subject cannot be empty.</p>
-  )} */}
+          {errors?.subject && (
+            <p className="text-red-500">Subject cannot be empty.</p>
+          )}
           <label
             htmlFor="message"
             className="text-gray-500 font-light mt-4 sm:mt-16 dark:text-gray-50"
@@ -224,9 +255,9 @@ export default function ContactUs() {
             }}
             className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-slate-800"
           ></textarea>
-          {/* {errors?.message && (
-    <p className="text-red-500">Message body cannot be empty.</p>
-  )} */}
+          {errors?.message && (
+            <p className="text-red-500">Message body cannot be empty.</p>
+          )}
           <div className="flex flex-row items-center justify-start">
             <button
               type="submit"
