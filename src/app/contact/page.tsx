@@ -72,27 +72,28 @@ export default function ContactUs() {
       message: false,
     };
     let isValid = true;
-
-    if (form.fullname.length === 0) {
+  
+    if (fullname.trim() === "") {
       tempErrors.fullname = true;
       isValid = false;
     }
-    if (form.email.length === 0) {
+    if (email.trim() === "") {
       tempErrors.email = true;
       isValid = false;
     }
-    if (form.subject.length === 0) {
+    if (subject.trim() === "") {
       tempErrors.subject = true;
       isValid = false;
     }
-    if (form.message.length === 0) {
+    if (message.trim() === "") {
       tempErrors.message = true;
       isValid = false;
     }
-
+  
     setErrors({ ...tempErrors });
     return isValid;
   };
+  
 
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault();
