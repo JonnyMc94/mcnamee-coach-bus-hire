@@ -21,6 +21,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/card.jsx", "pages/api/sendemail.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/card.jsx", "pages/api/sendemail.js", "src/pages/api/sendemail.mjs"],
   "exclude": ["node_modules"]
 }
