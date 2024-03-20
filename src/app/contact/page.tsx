@@ -72,7 +72,7 @@ export default function ContactUs() {
       message: false,
     };
     let isValid = true;
-  
+
     if (fullname.trim() === "") {
       tempErrors.fullname = true;
       isValid = false;
@@ -89,11 +89,10 @@ export default function ContactUs() {
       tempErrors.message = true;
       isValid = false;
     }
-  
+
     setErrors({ ...tempErrors });
     return isValid;
   };
-  
 
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault();
@@ -105,7 +104,7 @@ export default function ContactUs() {
       const res = await fetch("/api/sendemail", {
         body: JSON.stringify({
           email: email,
-          fullname: fullname,
+          name: fullname,
           subject: subject,
           message: message,
         }),
@@ -115,31 +114,25 @@ export default function ContactUs() {
         method: "POST",
       });
 
-      const { error } = await res.json();
-      if (error) {
-        console.log(error);
+      const data = await res.json();
+      if (data.error) {
+        console.log(data.error);
         setShowSuccessMessage(false);
         setShowFailureMessage(true);
         setButtonText("Send");
-
+      } else {
+        setShowSuccessMessage(true);
+        setShowFailureMessage(false);
+        setButtonText("Send");
         // Reset form fields
         setFullname("");
         setEmail("");
         setMessage("");
         setSubject("");
-        return;
       }
-      setShowSuccessMessage(true);
-      setShowFailureMessage(false);
-      setButtonText("Send");
-      // Reset form fields
-      setFullname("");
-      setEmail("");
-      setMessage("");
-      setSubject("");
     }
-    console.log(fullname, email, subject, message);
   };
+
   return (
     <main className="p-5 sm:p-14">
       <header className="p-4 sm:p-8 grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-10 pt-4 sm:pt-10 lg:px-8 xl:px-20 bg-inherit h-auto sm:h-[90vh]">

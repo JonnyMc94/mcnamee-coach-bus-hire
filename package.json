@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "server": "node server/server.js"
+    "server": "node api/sendemail.js"
   },
   "dependencies": {
     "body-parser": "^1.20.2",
