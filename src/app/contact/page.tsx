@@ -63,50 +63,45 @@ export default function ContactUs() {
 
   //   const [form, setForm] = useState(false);
 
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = async (e: { preventDefault: () => void; }) => {
     e.preventDefault();
-
-    let isValidForm = handleValidation();
-
-    if (isValidForm) {
-      setButtonText("Sending");
-      const res = await fetch("/api/sendgrid", {
-        body: JSON.stringify({
-          email: email,
-          fullname: fullname,
-          subject: subject,
-          message: message,
-        }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-        method: "POST",
-      });
-
-      const { error } = await res.json();
-      if (error) {
-        console.log(error);
-        setShowSuccessMessage(false);
-        setShowFailureMessage(true);
-        setButtonText("Send");
-
-        // Reset form fields
-        setFullname("");
-        setEmail("");
-        setMessage("");
-        setSubject("");
-        return;
-      }
-      setShowSuccessMessage(true);
-      setShowFailureMessage(false);
-      setButtonText("Send");
-      // Reset form fields
-      setFullname("");
-      setEmail("");
-      setMessage("");
-      setSubject("");
+  
+    // Client-side validation
+    if (!fullname || !email || !message) {
+      alert('All fields are required');
+      return;
     }
-    console.log(fullname, email, subject, message);
+  
+    if (!email.includes('@')) {
+      alert('Please enter a valid email address');
+      return;
+    }
+  
+    const res = await fetch('/api/send-email', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name: fullname,
+        email: email,
+        message: message,
+      }),
+    });
+  
+    const data = await res.json();
+  
+    if (data.success) {
+      // Reset form fields
+      setFullname('');
+      setEmail('');
+      setMessage('');
+      // Show success message
+      alert('Email sent successfully');
+    } else {
+      // Show error message
+      alert('An error occurred; email not sent');
+    }
   };
   return (
     <main className="p-5 sm:p-14">
