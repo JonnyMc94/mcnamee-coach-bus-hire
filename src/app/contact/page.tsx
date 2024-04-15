@@ -120,15 +120,15 @@ export default function ContactUs() {
               We would love to hear from you. Please reach out to us.
             </p>
             <div className="">
-            {dataSet.map((data, i, key) => {
+            {dataSet.map((data, i) => {
               const Icon = <data.icon />;
 
               return (
-                <div className="inline-flex text-sm sm:text-base text-slate-800 mt-2 sm:mt-4 font-light">
-                  <span className="pr-2 pt-1 text-xl" key={i}>
+                <div className="inline-flex text-sm sm:text-base text-slate-800 mt-2 sm:mt-4 font-light" key={i}>
+                  <span className="pr-2 pt-1 text-xl" >
                     {Icon}
                   </span>
-                  <span className="pr-6 mt-0.5" key={i}>
+                  <span className="pr-6 mt-0.5">
                     {" "}
                     {data.info}{" "}
                   </span>

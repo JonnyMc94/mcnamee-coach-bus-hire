@@ -73,7 +73,7 @@ export default function Services() {
         </h1>
         <p className="w-full sm:w-1/2 mb-4 sm:mb-10 mt-4 sm:mt-10 p-4 sm:p-10 text-base sm:text-xl text-center text-slate-600">
           We offer a wide range of services and cater to any group size. Scroll
-          down to check them out and don't hesitate to contact us for more
+          down to check them out and don&apos;t hesitate to contact us for more
           details!
         </p>
       </div>
