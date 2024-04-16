@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import NavLink from "@/src/components/nav-links";
-import Footer from "@/src/components/copyright-footer";
-import SmallContactBar from "@/src/components/small-contact-bar";
-import ImageCarousel from "@/src/components/image-carousel";
-import WhatsappChat from '@/src/components/whatsapp-chat';
+import NavLink from "@/components/nav-links";
+import Footer from "@/components/copyright-footer";
+import SmallContactBar from "@/components/small-contact-bar";
+import ImageCarousel from "@/components/image-carousel";
+import WhatsappChat from '@/components/whatsapp-chat';
 import Card from "@/src/components/card";
 import "@/src/app/globals.css";
 

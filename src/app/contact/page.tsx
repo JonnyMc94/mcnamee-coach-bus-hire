@@ -1,8 +1,8 @@
 "use client";
 import React, { useState } from "react";
-import NavLink from "@/src/components/nav-links";
-import Footer from "@/src/components/copyright-footer";
-import SmallContactBar from "@/src/components/small-contact-bar";
+import NavLink from "@/components/nav-links";
+import Footer from "@/components/copyright-footer";
+import SmallContactBar from "@/components/small-contact-bar";
 import { BsTelephone } from "react-icons/bs";
 import { MdMarkEmailUnread } from "react-icons/md";
 import { PiMapPinFill } from "react-icons/pi";
@@ -103,6 +103,7 @@ export default function ContactUs() {
       alert('An error occurred; email not sent');
     }
   };
+  
   return (
     <main className="p-5 sm:p-14">
       <header className="p-4 sm:p-8 grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-10 pt-4 sm:pt-10 lg:px-8 xl:px-20 bg-inherit h-auto sm:h-[90vh]">

@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import Card from "@/src/components/card";
+import Card from "@/components/card";
 
 export const metadata: Metadata = {
   title: "Services",

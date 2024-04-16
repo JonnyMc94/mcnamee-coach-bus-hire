@@ -2,7 +2,7 @@
 import React from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { FaWhatsapp } from "react-icons/fa6";
-import { isMobileDevice, isDesktopDevice } from "@/src/types/deviceState";
+import { isMobileDevice, isDesktopDevice } from "@/types/deviceState";
 import { NextRequest, NextResponse, userAgent } from "next/server";
 
 const Whatsapp: React.FC = () => {

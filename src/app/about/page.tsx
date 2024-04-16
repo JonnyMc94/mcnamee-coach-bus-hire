@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Image from "next/image";
-import Footer from "@/src/components/copyright-footer";
+import Footer from "@/components/copyright-footer";
 
 export const metadata: Metadata = {
   title: "About",
