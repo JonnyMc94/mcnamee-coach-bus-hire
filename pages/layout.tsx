@@ -4,7 +4,7 @@ import NavLink from "@/components/nav-links";
 import Footer from "@/components/copyright-footer";
 import SmallContactBar from "@/components/small-contact-bar";
 import ImageCarousel from "@/components/image-carousel";
-import "@/src/app/globals.css";
+import "@/pages/globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 

@@ -1,9 +1,5 @@
-import Image from "next/image";
-
-import NavLink from "@/components/nav-links";
+import Head from "next/head";
 import Footer from "@/components/copyright-footer";
-import SmallContactBar from "@/components/small-contact-bar";
-import ImageCarousel from "@/components/image-carousel";
 import HomeCard from "@/components/home-card";
 import RootLayout from "./layout";
 import React from "react";
@@ -11,6 +7,13 @@ import React from "react";
 export default function Home() {
   return (
     <RootLayout>
+      <Head>
+        <title>Services Page</title>
+        <meta
+          name="description"
+          content="Details of the services we currently offer"
+        />
+      </Head>
       <div className="h-[10vh] m-4 sm:m-16 flex flex-col items-center justify-center divide-y-2 divide-slate-600">
         <h1 className="mt-6 sm:mt-16 pt-6 sm:pt-16 text-3xl sm:text-5xl text-slate-600 flex justify-center items-center text-center">
           McNamee Coach & Mini-Bus Hire
