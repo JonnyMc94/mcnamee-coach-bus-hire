@@ -1,5 +1,5 @@
 import { Inter } from "next/font/google";
-import "@/pages/globals.css";
+// import "@/pages/globals.css";
 import SmallContactBar from "@/components/small-contact-bar";
 import ImageCarousel from "@/components/image-carousel";
 import NavLink from "@/components/nav-links";
