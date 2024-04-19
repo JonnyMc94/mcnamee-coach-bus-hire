@@ -8,10 +8,10 @@ export default function Home() {
   return (
     <RootLayout>
       <Head>
-        <title>Services Page</title>
+        <title>Home Page</title>
         <meta
           name="description"
-          content="Details of the services we currently offer"
+          content="This is our home page"
         />
       </Head>
       <div className="h-[10vh] m-4 sm:m-16 flex flex-col items-center justify-center divide-y-2 divide-slate-600">
