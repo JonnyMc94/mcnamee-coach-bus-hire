@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Footer from "@/components/copyright-footer";
+import GalleryLayout from "./layout";
 
 export const metadata: Metadata = {
   title: "Gallery",
@@ -110,7 +111,7 @@ const data = [
 
 export default function GalleryPage() {
   return (
-    <main className="flex-grow items-center justify-center md:h-svh mb-10 p-6">
+    <GalleryLayout className="flex-grow items-center justify-center md:h-svh mb-10 p-6">
       <div className="bg-white min-h-75svh w-full p-8 sm:p-10 lg:p-12">
         <div className="mx-auto max-w-screen-4xl md:px-8">
           <div className="grid grid-cols-3 gap-4 md:gap-6 xl:gap-8">
@@ -136,6 +137,6 @@ export default function GalleryPage() {
           </div>
         </div>
       </div>
-    </main>
+    </GalleryLayout>
   );
 }

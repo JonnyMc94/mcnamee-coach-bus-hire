@@ -4,23 +4,32 @@ import NavLink from "@/components/nav-links";
 import Footer from "@/components/copyright-footer";
 import SmallContactBar from "@/components/small-contact-bar";
 import ImageCarousel from "@/components/image-carousel";
+import Card from "@/components/card";
 import "@/src/app/globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Home",
-  description: "This is our home page",
+  title: "About",
+  description: "You can find out more about our company here",
 };
 
-export default function RootLayout({
+export default function AboutLayout({
   children,
+  className,
 }: Readonly<{
   children: React.ReactNode;
+  className?: string;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${inter.className}`}>{children}</body>
-    </html>
+    <>
+      <SmallContactBar />
+      <NavLink />
+      <ImageCarousel />
+      <main>
+        {children}
+      </main>
+      <Footer />
+    </>
   );
 }

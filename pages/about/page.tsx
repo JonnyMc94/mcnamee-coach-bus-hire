@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Image from "next/image";
 import Footer from "@/components/copyright-footer";
+import AboutLayout from "./layout";
 
 export const metadata: Metadata = {
   title: "About",
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <main className="">
+    <AboutLayout className="">
       <div className="container mx-auto p-4 lg:p-8">
         <div className="h-[15vh] mt-10 sm:mt-16 mb-8 sm:mb-10 flex flex-col items-center justify-center divide-y-2 divide-slate-600">
           <h1 className="mt-4 pb-4 sm:mt-10 text-4xl sm:text-7xl text-slate-600 text-center">
@@ -39,6 +40,6 @@ export default function AboutPage() {
           </div>
         </div>
       </div>
-    </main>
+    </AboutLayout>
   );
 }

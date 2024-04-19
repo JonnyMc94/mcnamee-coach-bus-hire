@@ -1,33 +1,37 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import NavLink from "@/components/nav-links";
+import Footer from "@/components/copyright-footer";
 import SmallContactBar from "@/components/small-contact-bar";
 import ImageCarousel from "@/components/image-carousel";
+import WhatsappChat from '@/components/whatsapp-chat';
 import Card from "@/components/card";
-import Footer from "@/components/copyright-footer";
-
 import "@/src/app/globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Gallery",
-  description: "You can see images of our fleet here",
+  title: "Contact Us",
+  description: "You can contact us with any queries here",
 };
 
-export default function GalleryLayout({
+export default function ContactLayout({
   children,
+  className,
 }: Readonly<{
   children: React.ReactNode;
+  className?: string;  
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <SmallContactBar />
-        <NavLink />
+    <>
+      <SmallContactBar />
+      <NavLink />
+      <ImageCarousel />
+      <WhatsappChat/>
+      <main className={className}>
         {children}
-      </body>
-    </html>
+      </main>
+      <Footer />
+    </>
   );
 }
-

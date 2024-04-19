@@ -6,6 +6,7 @@ import SmallContactBar from "@/components/small-contact-bar";
 import { BsTelephone } from "react-icons/bs";
 import { MdMarkEmailUnread } from "react-icons/md";
 import { PiMapPinFill } from "react-icons/pi";
+import ContactLayout from './layout';
 
 export default function ContactUs() {
   const [fullname, setFullname] = useState("");
@@ -105,7 +106,7 @@ export default function ContactUs() {
   };
   
   return (
-    <main className="p-5 sm:p-14">
+    <ContactLayout className="p-5 sm:p-14">
       <header className="p-4 sm:p-8 grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-10 pt-4 sm:pt-10 lg:px-8 xl:px-20 bg-inherit h-auto sm:h-[90vh]">
         <div className="grid grid-rows-2 mb-4 sm:mb-10 md:mt-10 sm:mt-20 lg:mr-4 xl:mr-20">
           <div className="mb-4 sm:mb-8">
@@ -258,6 +259,6 @@ export default function ContactUs() {
           </div>
         </form>
       </header>
-    </main>
+    </ContactLayout>
   );
 }
