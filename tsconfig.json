@@ -23,9 +23,11 @@
   },
 
   "awesomeTypescriptLoaderOptions": {
-    "useTranspileModule": true
+    "useWebpackText": true,
+    "useTranspileModule": true,
+    "doTypeCheck": true,
+    "forkChecker": true
   },
 
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/card.jsx"],
   "exclude": ["node_modules"]
 }
