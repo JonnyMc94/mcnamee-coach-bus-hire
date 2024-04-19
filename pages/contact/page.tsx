@@ -1,12 +1,10 @@
 "use client";
 import React, { useState } from "react";
-import NavLink from "@/components/nav-links";
-import Footer from "@/components/copyright-footer";
-import SmallContactBar from "@/components/small-contact-bar";
+import Head from "next/head";
 import { BsTelephone } from "react-icons/bs";
 import { MdMarkEmailUnread } from "react-icons/md";
 import { PiMapPinFill } from "react-icons/pi";
-import ContactLayout from './layout';
+import ContactLayout from "./layout";
 
 export default function ContactUs() {
   const [fullname, setFullname] = useState("");
@@ -64,24 +62,24 @@ export default function ContactUs() {
 
   //   const [form, setForm] = useState(false);
 
-  const handleSubmit = async (e: { preventDefault: () => void; }) => {
+  const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
-  
+
     // Client-side validation
     if (!fullname || !email || !message) {
-      alert('All fields are required');
+      alert("All fields are required");
       return;
     }
-  
-    if (!email.includes('@')) {
-      alert('Please enter a valid email address');
+
+    if (!email.includes("@")) {
+      alert("Please enter a valid email address");
       return;
     }
-  
-    const res = await fetch('/api/send-email', {
-      method: 'POST',
+
+    const res = await fetch("/api/send-email", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         name: fullname,
@@ -89,24 +87,31 @@ export default function ContactUs() {
         message: message,
       }),
     });
-  
+
     const data = await res.json();
-  
+
     if (data.success) {
       // Reset form fields
-      setFullname('');
-      setEmail('');
-      setMessage('');
+      setFullname("");
+      setEmail("");
+      setMessage("");
       // Show success message
-      alert('Email sent successfully');
+      alert("Email sent successfully");
     } else {
       // Show error message
-      alert('An error occurred; email not sent');
+      alert("An error occurred; email not sent");
     }
   };
-  
+
   return (
     <ContactLayout className="p-5 sm:p-14">
+      <Head>
+        <title>Contact Us Page</title>
+        <meta
+          name="description"
+          content="You can contact us with any queries here"
+        />
+      </Head>
       <header className="p-4 sm:p-8 grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-10 pt-4 sm:pt-10 lg:px-8 xl:px-20 bg-inherit h-auto sm:h-[90vh]">
         <div className="grid grid-rows-2 mb-4 sm:mb-10 md:mt-10 sm:mt-20 lg:mr-4 xl:mr-20">
           <div className="mb-4 sm:mb-8">
@@ -117,21 +122,19 @@ export default function ContactUs() {
               We would love to hear from you. Please reach out to us.
             </p>
             <div className="">
-            {dataSet.map((data, i) => {
-              const Icon = <data.icon />;
+              {dataSet.map((data, i) => {
+                const Icon = <data.icon />;
 
-              return (
-                <div className="inline-flex text-sm sm:text-base text-slate-800 mt-2 sm:mt-4 font-light" key={i}>
-                  <span className="pr-2 pt-1 text-xl" >
-                    {Icon}
-                  </span>
-                  <span className="pr-6 mt-0.5">
-                    {" "}
-                    {data.info}{" "}
-                  </span>
-                </div>
-              );
-            })}
+                return (
+                  <div
+                    className="inline-flex text-sm sm:text-base text-slate-800 mt-2 sm:mt-4 font-light"
+                    key={i}
+                  >
+                    <span className="pr-2 pt-1 text-xl">{Icon}</span>
+                    <span className="pr-6 mt-0.5"> {data.info} </span>
+                  </div>
+                );
+              })}
             </div>
           </div>
           <div>

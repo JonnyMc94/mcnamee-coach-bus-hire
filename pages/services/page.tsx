@@ -1,9 +1,6 @@
-import { Metadata } from "next";
+import Head from "next/head";
+import ServicesLayout from "./layout";
 import Card from "@/components/card";
-
-export const metadata: Metadata = {
-  title: "Services",
-};
 
 const data = [
   {
@@ -66,7 +63,14 @@ const data = [
 
 export default function Services() {
   return (
-    <main className="p-5 sm:p-10">
+    <ServicesLayout className="p-5 sm:p-10">
+      <Head>
+        <title>Services Page</title>
+        <meta
+          name="description"
+          content="Details of the services we currently offer"
+        />
+      </Head>
       <div className="h-[15vh] mt-10 sm:mt-16 mb-8 sm:mb-10 flex flex-col items-center justify-center divide-y-2 divide-slate-600">
         <h1 className="mt-4 sm:mt-10 text-4xl sm:text-7xl text-slate-600 text-center">
           Services
@@ -91,6 +95,6 @@ export default function Services() {
           );
         })}
       </div>
-    </main>
+    </ServicesLayout>
   );
 }

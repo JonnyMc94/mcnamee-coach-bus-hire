@@ -16,15 +16,17 @@ export const metadata: Metadata = {
 
 export default function ServicesLayout({
   children,
+  className,
 }: Readonly<{
   children: React.ReactNode;
+  className?: string;
 }>) {
   return (
     <>
       <SmallContactBar />
       <NavLink />
       <ImageCarousel />
-      <main>
+      <main className={className}>
         {children}
       </main>
       <Footer />
