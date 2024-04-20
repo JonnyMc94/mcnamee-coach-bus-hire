@@ -1,13 +1,13 @@
 import nodemailer from 'nodemailer';
 
-const senderEmail = process.env.EMAIL;
+const senderEmail = process.env.EMAIL_USER;
 const pass = process.env.APP_PASSWORD;
 
 export default async function handler(req, res) {
 
-    console.log('Email:', process.env.EMAIL);
+    console.log('Email:', process.env.EMAIL_USER);
     console.log('Password:', Boolean(process.env.APP_PASSWORD));
-    
+
     if (req.method === 'POST') {
         const { name, email, message } = req.body;
 
