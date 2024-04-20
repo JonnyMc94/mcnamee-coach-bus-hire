@@ -4,6 +4,10 @@ const senderEmail = process.env.EMAIL;
 const pass = process.env.APP_PASSWORD;
 
 export default async function handler(req, res) {
+
+    console.log('Email:', process.env.EMAIL);
+    console.log('Password:', Boolean(process.env.APP_PASSWORD));
+    
     if (req.method === 'POST') {
         const { name, email, message } = req.body;
 
