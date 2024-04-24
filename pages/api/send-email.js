@@ -1,17 +1,10 @@
 import nodemailer from 'nodemailer';
-import fs from 'fs';
-import path from 'path';
+import emailTemplate from 'raw-loader!../../templates/email.html';
 
 const senderEmail = process.env.EMAIL_USER;
 const pass = process.env.APP_PASSWORD;
-const filePath = path.join(__dirname, '../../templates/email.html');
-console.log(filePath);
-const emailTemplate = fs.readFileSync(path.join(__dirname, '../../templates/email.html'), 'utf8');
 
 export default async function handler(req, res) {
-
-    console.log('Email:', process.env.EMAIL_USER);
-    console.log('Password:', Boolean(process.env.APP_PASSWORD));
 
     if (req.method === 'POST') {
         const { name, email, message } = req.body;
