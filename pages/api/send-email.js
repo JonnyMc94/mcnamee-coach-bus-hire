@@ -4,7 +4,7 @@ import path from 'path';
 
 const senderEmail = process.env.EMAIL_USER;
 const pass = process.env.APP_PASSWORD;
-const emailTemplate = fs.readFileSync(path.join(__dirname, '../../templates/email-template.html'), 'utf8');
+const emailTemplate = fs.readFileSync(path.join(__dirname, '../../templates/email.html'), 'utf8');
 
 export default async function handler(req, res) {
 
