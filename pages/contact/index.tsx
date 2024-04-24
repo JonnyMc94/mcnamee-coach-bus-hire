@@ -13,7 +13,12 @@ export default function ContactUs() {
   const [message, setMessage] = useState("");
 
   //   Form validation
-  const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState({
+    fullname: false,
+    email: false,
+    subject: false,
+    message: false,
+  });
 
   //   Setting button text
   const [buttonText, setButtonText] = useState("Send");
@@ -64,42 +69,38 @@ export default function ContactUs() {
 
   const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
+    setButtonText("Sending...");
 
-    // Client-side validation
-    if (!fullname || !email || !message) {
-      alert("All fields are required");
+    if (!handleValidation()) {
       return;
-    }
-
-    if (!email.includes("@")) {
-      alert("Please enter a valid email address");
-      return;
-    }
-
-    const res = await fetch("/api/send-email", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name: fullname,
-        email: email,
-        message: message,
-      }),
-    });
-
-    const data = await res.json();
-
-    if (data.success) {
-      // Reset form fields
-      setFullname("");
-      setEmail("");
-      setMessage("");
-      // Show success message
-      alert("Email sent successfully");
     } else {
-      // Show error message
-      alert("An error occurred; email not sent");
+      const res = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: fullname,
+          email: email,
+          message: message,
+        }),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        setShowSuccessMessage(true);
+        // Reset form fields
+        setFullname("");
+        setEmail("");
+        setMessage("");
+        // Show success message
+        // alert("Email sent successfully");
+      } else {
+        // Show error message
+        setShowFailureMessage(true);
+        // alert("An error occurred; email not sent");
+      }
     }
   };
 
@@ -169,9 +170,9 @@ export default function ContactUs() {
             name="fullname"
             className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-slate-800"
           />
-          {/* {errors?.fullname && (
-    <p className="text-red-500">Fullname cannot be empty.</p>
-  )} */}
+          {errors.fullname && (
+            <p className="text-red-500">Fullname cannot be empty.</p>
+          )}
 
           <label
             htmlFor="email"
@@ -188,9 +189,9 @@ export default function ContactUs() {
             }}
             className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-slate-800"
           />
-          {/* {errors?.email && (
-    <p className="text-red-500">Email cannot be empty.</p>
-  )} */}
+          {errors?.email && (
+            <p className="text-red-500">Email cannot be empty.</p>
+          )}
 
           <label
             htmlFor="subject"
@@ -207,9 +208,9 @@ export default function ContactUs() {
             }}
             className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-slate-800"
           />
-          {/* {errors?.subject && (
-    <p className="text-red-500">Subject cannot be empty.</p>
-  )} */}
+          {errors?.subject && (
+            <p className="text-red-500">Subject cannot be empty.</p>
+          )}
           <label
             htmlFor="message"
             className="text-gray-500 font-light mt-4 sm:mt-16 dark:text-gray-50"
@@ -224,9 +225,9 @@ export default function ContactUs() {
             }}
             className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-slate-800"
           ></textarea>
-          {/* {errors?.message && (
-    <p className="text-red-500">Message body cannot be empty.</p>
-  )} */}
+          {errors?.message && (
+            <p className="text-red-500">Message body cannot be empty.</p>
+          )}
           <div className="flex flex-row items-center justify-start">
             <button
               type="submit"
