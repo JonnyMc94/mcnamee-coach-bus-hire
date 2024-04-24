@@ -90,12 +90,19 @@ export default function ContactUs() {
 
       if (data.success) {
         setShowSuccessMessage(true);
+
         // Reset form fields
         setFullname("");
         setEmail("");
         setMessage("");
-        // Show success message
-        // alert("Email sent successfully");
+        setSubject("");
+
+        // Change button text to 'Sent'
+        setButtonText("Sent");
+        // Change button text back to 'Send' after 5 seconds
+        setTimeout(() => {
+          setButtonText("Send");
+        }, 5000);
       } else {
         // Show error message
         setShowFailureMessage(true);
@@ -159,7 +166,7 @@ export default function ContactUs() {
             className="text-gray-500 font-light mt-4 sm:mt-16 dark:text-gray-50"
           >
             Full name
-            <span className="text-red-500 dark:text-gray-50 pl-2">*</span>
+            <span className="text-red-500 pl-2">*</span>
           </label>
           <input
             type="text"
@@ -189,7 +196,7 @@ export default function ContactUs() {
             }}
             className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-slate-800"
           />
-          {errors?.email && (
+          {errors.email && (
             <p className="text-red-500">Email cannot be empty.</p>
           )}
 
@@ -208,7 +215,7 @@ export default function ContactUs() {
             }}
             className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-slate-800"
           />
-          {errors?.subject && (
+          {errors.subject && (
             <p className="text-red-500">Subject cannot be empty.</p>
           )}
           <label
@@ -225,7 +232,7 @@ export default function ContactUs() {
             }}
             className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-slate-800"
           ></textarea>
-          {errors?.message && (
+          {errors.message && (
             <p className="text-red-500">Message body cannot be empty.</p>
           )}
           <div className="flex flex-row items-center justify-start">
