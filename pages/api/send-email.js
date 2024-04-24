@@ -28,7 +28,7 @@ export default async function handler(req, res) {
             from: senderEmail,
             to: senderEmail,
             subject: `Message from ${name}`,
-            text: emailTemplate.replace('{{name}}', name).replace('{{email}}', email).replace('{{message}}', message),
+            html: emailTemplate.replace('{{name}}', name).replace('{{email}}', email).replace('{{message}}', message),
         };
 
         transporter.sendMail(mailOptions, (error, info) => {
