@@ -117,8 +117,11 @@
                             "
                             class="padding message-content"
                           >
-                            <h2>New Contact Message</h2>
-                            <div class="form-container">${htmlData}</div>
+                            <h2>New Contact Message from {{name}}</h2>
+                            <div class="form-container">
+                              <p>Email: {{email}}</p>
+                              <p>Message: {{message}}</p>
+                            </div>
                           </td>
                         </tr>
                       </table>

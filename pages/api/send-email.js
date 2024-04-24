@@ -1,7 +1,10 @@
 import nodemailer from 'nodemailer';
+import fs from 'fs';
+import path from 'path';
 
 const senderEmail = process.env.EMAIL_USER;
 const pass = process.env.APP_PASSWORD;
+const emailTemplate = fs.readFileSync(path.join(process.cwd(), 'email-template.html'), 'utf8');
 
 export default async function handler(req, res) {
 
@@ -25,7 +28,7 @@ export default async function handler(req, res) {
             from: senderEmail,
             to: senderEmail,
             subject: `Message from ${name}`,
-            text: message
+            text: emailTemplate.replace('{{name}}', name).replace('{{email}}', email).replace('{{message}}', message),
         };
 
         transporter.sendMail(mailOptions, (error, info) => {
