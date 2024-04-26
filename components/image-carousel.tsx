@@ -29,7 +29,7 @@ export default function ImageCarousel() {
               src={data.src}
               className="absolute inset-0 object-cover w-full h-full"
             />
-            <div className="overlay absolute inset-0 bg-black opacity-50"></div>
+            <div className="overlay absolute inset-0 bg-black opacity-30"></div>
             <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
               <div className="flex flex-row items-center justify-start">
                 <Link

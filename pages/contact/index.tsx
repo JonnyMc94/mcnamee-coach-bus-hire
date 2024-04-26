@@ -82,6 +82,7 @@ export default function ContactUs() {
         body: JSON.stringify({
           name: fullname,
           email: email,
+          subject: subject,
           message: message,
         }),
       });

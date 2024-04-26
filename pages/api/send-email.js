@@ -7,7 +7,7 @@ const pass = process.env.APP_PASSWORD;
 export default async function handler(req, res) {
 
     if (req.method === 'POST') {
-        const { name, email, message } = req.body;
+        const { name, email, subject, message } = req.body;
 
         const transporter = nodemailer.createTransport({
             host: 'smtp.gmail.com',
@@ -23,7 +23,7 @@ export default async function handler(req, res) {
             from: senderEmail,
             to: senderEmail,
             subject: `Message from ${name}`,
-            html: emailTemplate.replace('{{name}}', name).replace('{{email}}', email).replace('{{message}}', message),
+            html: emailTemplate.replace('{{name}}', name).replace('{{email}}', email).replace('{{subject}}', subject).replace('{{message}}', message),
         };
 
         transporter.sendMail(mailOptions, (error, info) => {
