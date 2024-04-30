@@ -3,6 +3,7 @@ import NavLink from "@/components/nav-links";
 import Footer from "@/components/copyright-footer";
 import SmallContactBar from "@/components/small-contact-bar";
 import ImageCarousel from "@/components/image-carousel";
+import WhatsappChat from "@/components/whatsapp-chat";
 import Card from "@/components/card";
 // import "@/pages/globals.css";
 
@@ -21,6 +22,7 @@ export default function AboutLayout({
       <SmallContactBar />
       <NavLink />
       <ImageCarousel />
+      <WhatsappChat/>
       <main>
         {children}
       </main>
