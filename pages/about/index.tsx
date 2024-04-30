@@ -20,7 +20,7 @@ export default function AboutPage() {
         </div>
         <div className="flex flex-col items-center lg:flex-row lg:justify-center lg:space-x-8 mb-10">
           <img
-            src="/coach1.png"
+            src="/whitecoach3.JPG"
             alt="McNamee Coach and Bus Hire"
             className="w-full lg:w-1/3 mb-14 lg:mb-0 rounded-lg"
           />

@@ -50,21 +50,6 @@ const data = [
     alt: "Image of a blue coach",
   },
   {
-    id: 9,
-    src: "/coach1.png",
-    alt: "Image of a coach",
-  },
-  {
-    id: 10,
-    src: "/coach2.png",
-    alt: "Image of a coach",
-  },
-  {
-    id: 11,
-    src: "/coach3.png",
-    alt: "Image of a coach",
-  },
-  {
     id: 12,
     src: "/fleetlineup1.JPG",
     alt: "Lineup of the fleet",
