@@ -34,7 +34,7 @@ export default function NavLink() {
     <nav className="flex justify-between items-center w-full h-[8vh] 4sm:h-[10vh] bg-blue-400">
       <Link href="/" className="pl-4 md:pl-[35px] text-center md:text-left">
         <h1 className="block absolute z-10 flex flex-col top-[10px] left-[62px] md:left-14 md:top-9">
-          <span className="font-serif font-extrabold text-base md:text-2xl ml-8 md:ml-12">
+          <span className="font-serif font-extrabold text-base md:text-2xl md:ml-12">
             McNamee
           </span>
           <span className="font-serif font-extrabold text-base md:text-2xl">
