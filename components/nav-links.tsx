@@ -31,7 +31,7 @@ export default function NavLink() {
   };
 
   return (
-    <nav className="flex justify-between items-center w-full h-[8vh] bg-blue-400">
+    <nav className="flex justify-between items-center w-full h-[8vh] 4sm:h-[10vh] bg-blue-400">
       <div className="pl-4 md:pl-[35px] text-center md:text-left">
         <h1 className="block absolute z-10 flex flex-col top-[10px] left-[62px] md:left-14 md:top-9">
           <span className="font-serif font-extrabold text-base md:text-2xl ml-8 md:ml-12">
@@ -55,7 +55,7 @@ export default function NavLink() {
           })}
         </ul>
       </div>
-      <div className="pr-4 hidden md:visible">
+      <div className="pr-4 hidden md:flex">
         <Link
           className="pl-4 pr-3 pt-2 pb-2 mr-2 bg-blue-700 text-gray-50 font-light rounded-xl text-base flex flex-row items-center"
           href="/contact"

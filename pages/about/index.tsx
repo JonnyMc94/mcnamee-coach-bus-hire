@@ -18,13 +18,13 @@ export default function AboutPage() {
           </h1>
           <p className="w-[40vh] p-10 text-xl text-center text-slate-600"></p>
         </div>
-        <div className="flex flex-col items-center lg:flex-row lg:justify-center lg:space-x-8 mb-10">
+        <div className="flex flex-col items-center lg:flex-row lg:justify-around lg:space-x-8 mb-10">
           <img
             src="/whitecoach3.JPG"
             alt="McNamee Coach and Bus Hire"
-            className="w-full lg:w-1/3 mb-14 lg:mb-0 rounded-lg"
+            className="w-full lg:w-[40%] mb-14 lg:mb-0 rounded-lg"
           />
-          <div className="lg:w-1/3 md:w-1/2 sm:w-full lg:mt-0 md:mt-8 sm:mt-4 lg:ml-12">
+          <div className="lg:w-[40%] md:w-[50%] sm:w-full lg:mt-0 md:mt-8 sm:mt-4 lg:ml-12">
             <p className="text-base lg:text-lg">
               McNamee Coach and Bus Hire is a family-run business with a modern
               fleet. Our fleet consists of vehicles ranging from 4 seats to 72

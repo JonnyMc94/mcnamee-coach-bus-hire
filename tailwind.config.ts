@@ -20,6 +20,7 @@ const config: Config = {
         "xsm": {"min": "500px", "max": "660px"},
         "xxsm": {"min": "440px", "max": "505px"},
         "xxxsm": {"min": "380px", "max": "446px"},
+        "4sm": {"min": "320px", "max": "379px"},
       },
 
       fontSize: {

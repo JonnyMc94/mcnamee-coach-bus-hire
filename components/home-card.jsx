@@ -6,12 +6,11 @@ export default function HomeCard(props) {
   const { id, title, details, src, key, alt, href } = props;
 
   return (
-    <div className="block w-[85%] lg:w-[35vh] m-4 lg:m-10 shadow-2xl rounded-lg md:transition-all md:duration-700 md:hover:scale-110 bg-blue-400">
+    <div className="block w-full sm:w-[85%] lg:w-[30%] mt-4 mb-4 lg:m-10 shadow-2xl rounded-lg md:transition-all md:duration-700 md:hover:scale-110 bg-blue-400">
       <div
-        className="lg:h-[25vh] bg-cover bg-center rounded-t lg:rounded-l lg:rounded-r text-center overflow-hidden"
+        className="h-[25vh] lg:h-[25vh] bg-cover bg-center rounded-t lg:rounded-l lg:rounded-r text-center overflow-hidden"
         style={{ backgroundImage: `url(${src})` }}
         title={alt}
-        alt={alt}
       ></div>
       <div className="p-6 m-4 rounded-b lg:rounded-l lg:rounded-r">
         <div className="mb-4 text-xl lg:text-lg font-medium leading-tight text-slate-800">

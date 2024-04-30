@@ -48,7 +48,7 @@ const data = [
     title: "Hens & Stags",
     details:
       "Whether you're heading to a premier destination or pub crawling, we cater for all types of events. Get in touch!",
-    src: "/henparty.png",
+    src: "/stag.jpeg",
     alt: "Hen Party image",
   },
   {

@@ -7,7 +7,7 @@ import { PiMapPinFill } from "react-icons/pi";
 export default function SmallContactBar() {
   const dataSet = [
     { info: "+353 (85) 124 4312", icon: BsTelephone },
-    { info: "danielmcnamee@gmail.com", icon: MdMarkEmailUnread },
+    { info: "mcnameecoachhire@gmail.com", icon: MdMarkEmailUnread },
     { info: "Stoney Road, Oldcastle, Co Meath", icon: PiMapPinFill },
   ];
 

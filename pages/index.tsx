@@ -14,17 +14,17 @@ export default function Home() {
           content="This is our home page"
         />
       </Head>
-      <div className="h-[10vh] m-4 sm:m-16 flex flex-col items-center justify-center divide-y-2 divide-slate-600">
-        <h1 className="mt-6 sm:mt-16 pt-6 sm:pt-16 text-3xl sm:text-5xl text-slate-600 flex justify-center items-center text-center">
+      <div className="m-4 sm:m-16 flex flex-col items-center justify-center divide-y-2 divide-slate-600">
+        <h1 className="block mt-6 sm:mt-16 pt-6 sm:pt-16 text-3xl sm:text-5xl text-slate-600 flex justify-center items-center text-center">
           McNamee Coach & Mini-Bus Hire
         </h1>
-        <p className="w-full sm:w-[80%] mb-8 sm:mb-14 mt-4 sm:mt-10 p-4 sm:p-10 text-base sm:text-xl text-slate-600 flex justify-center items-center text-center">
+        <p className="block 4sm:text-center w-full sm:w-[80%] mb-8 sm:mb-14 mt-4 sm:mt-10 p-4 sm:p-10 text-base sm:text-xl text-slate-600 flex justify-center items-center text-center">
           We offer a wide range of services and cater to any group size. Scroll
-          down to check them out and don&apos;t hesitate to contact us for more
+          down to check them out and don't hesitate to contact us for more
           details!
         </p>
       </div>
-      <div className="flex flex-col sm:flex-row justify-center mt-4 sm:mt-10 mb-8 sm:mb-16 gap-4 sm:gap-6">
+      <div className="flex flex-col sm:flex-row items-start justify-around mt-4 sm:mt-10 mb-8 sm:mb-16 gap-4 sm:gap-6 px-4 sm:px-16">
         <HomeCard
           id={1}
           title={"About"}
