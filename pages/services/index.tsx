@@ -31,7 +31,7 @@ const data = [
     id: 4,
     title: "Day Tours",
     details:
-      "We cater for all ggroup sizes so conatact us with details on your next day trip",
+      "We cater for all group sizes so contact us with details on your next day trip",
     src: "/whitecoach4.JPG",
     alt: "Image of a white coach",
   },
