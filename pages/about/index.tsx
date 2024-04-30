@@ -26,10 +26,11 @@ export default function AboutPage() {
           />
           <div className="lg:w-[40%] md:w-[50%] sm:w-full lg:mt-0 md:mt-8 sm:mt-4 lg:ml-12">
             <p className="text-base lg:text-lg">
-              McNamee Coach and Bus Hire is a family-run business with a modern
-              fleet. Our fleet consists of vehicles ranging from 4 seats to 72
-              seater coaches. All of our vehicles are maintained inside and out
-              to the highest standards, and our drivers are very experienced.
+              McNamee Coach and Bus Hire is a business based in Oldcastle, Meath
+              with Daniel McNamee as director. Our modern fleet consists of
+              vehicles ranging from 4 seats to 72 seater coaches. All of our
+              vehicles are maintained inside and out to the highest standards,
+              and our drivers are very experienced.
             </p>
             <p className="text-base lg:text-lg mt-8">
               We specialize in school transport and trips, hen/stag parties,

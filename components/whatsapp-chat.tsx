@@ -1,13 +1,9 @@
 "use client";
 import React from "react";
-import { useRouter, usePathname } from "next/navigation";
 import { FaWhatsapp } from "react-icons/fa6";
-import { isMobileDevice, isDesktopDevice } from "@/types/deviceState";
-import { NextRequest, NextResponse, userAgent } from "next/server";
+import { isMobileDevice,  } from "@/types/deviceState";
 
 const Whatsapp: React.FC = () => {
-  const router = useRouter();
-  const pathname = usePathname();
 
   const handleClick = async () => {
     // Replace 'your_whatsapp_phone_number' with the actual phone number you want to contact
@@ -23,16 +19,15 @@ const Whatsapp: React.FC = () => {
         } catch (error) {
           console.error("Error sharing via navigator.share:", error);
         }
-      } else if (isMobileDevice()) {
-        window.open(`https://wa.me/${whatsappPhoneNumber}`, "_blank");
-      } else {
-        window.open(
-          `https://web.whatsapp.com/send?phone=${whatsappPhoneNumber}`,
-          "_blank"
-        );
+      } if (isMobileDevice()) {
+          // Open the WhatsApp link in the same tab to trigger the WhatsApp app on mobile devices
+          window.location.href = `https://wa.me/${whatsappPhoneNumber}`;
+        } else {
+          // Open the WhatsApp link in a new tab on desktop devices
+          window.open(`https://web.whatsapp.com/send?phone=${whatsappPhoneNumber}`, "_blank");
+        }
       }
-    }
-  };
+    };
 
   return (
     <>
