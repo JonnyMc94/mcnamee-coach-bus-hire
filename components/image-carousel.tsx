@@ -31,7 +31,7 @@ export default function ImageCarousel() {
             />
             <div className="overlay absolute inset-0 bg-black opacity-30"></div>
             <div className="absolute inset-0 flex flex-col items-center mt-36 text-white">
-              <div className="flex flex-row items-center justify-start">
+              <div className="flex flex-row items-center justify-start mb-4">
                 <Link
                   className="pl-4 pr-3 pt-2 pb-2 mr-2 bg-blue-700 md:hidden text-gray-50 font-light rounded-xl text-base flex"
                   href="/contact"
