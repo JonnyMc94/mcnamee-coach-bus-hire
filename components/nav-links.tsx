@@ -32,7 +32,7 @@ export default function NavLink() {
 
   return (
     <nav className="flex justify-between items-center w-full h-[8vh] 4sm:h-[10vh] bg-blue-400">
-      <div className="pl-4 md:pl-[35px] text-center md:text-left">
+      <Link href="/" className="pl-4 md:pl-[35px] text-center md:text-left">
         <h1 className="block absolute z-10 flex flex-col top-[10px] left-[62px] md:left-14 md:top-9">
           <span className="font-serif font-extrabold text-base md:text-2xl ml-8 md:ml-12">
             McNamee
@@ -41,7 +41,7 @@ export default function NavLink() {
             Coach & Bus Hire
           </span>
         </h1>
-      </div>
+      </Link>
       <div className="hidden md:flex md:flex-grow md:justify-center md:ml-[10%]">
         <ul className="flex justify-center gap-8 md:gap-[4vw]">
           {links.map((data, id) => {
