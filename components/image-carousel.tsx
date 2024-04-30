@@ -1,7 +1,8 @@
 "use client";
+import { useRouter } from 'next/router';
 import Image from "next/image";
 import Link from "next/link";
-import { FaArrowRight } from "react-icons/fa";
+import { FaArrowRight, FaArrowDown } from "react-icons/fa";
 import { EmblaOptionsType } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
@@ -17,6 +18,9 @@ export default function ImageCarousel() {
 
   const options = { loop: true, playOnInit: true, delay: 7500 };
   const [emblaRef] = useEmblaCarousel(options, [Autoplay(options)]);
+
+  const router = useRouter();
+  const isContactPage = router.pathname === '/contact';
 
   return (
     <div className="relative overflow-hidden" ref={emblaRef}>
@@ -36,7 +40,7 @@ export default function ImageCarousel() {
                   className="pl-4 pr-3 pt-2 pb-2 mr-2 bg-blue-700 md:hidden text-gray-50 font-light rounded-xl text-base flex"
                   href="/contact"
                 >
-                  Contact Us <FaArrowRight className="text-white ml-2" />
+                  Contact Us {isContactPage ? <FaArrowDown className="text-white ml-2 mt-1" /> : <FaArrowRight className="text-white ml-2 mt-1" />}
                 </Link>
               </div>
               <h2 className=" block 4sm:text-xl lg:text-6xl md:text-4xl sm:text-4xl xsm:text-2xl xxsm:text-2xl xxxsm:text-xl text-white font-extrabold text-center">

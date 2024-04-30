@@ -8,7 +8,7 @@ const data = [
     title: "School Transport",
     details:
       "We service many routes, to schools in the North West Meath/Cavan area. Get in touch to find out more",
-    src: "/schoolbus1.JPG",
+    src: "/2coaches.JPG",
     alt: "Image of a white school bus",
   },
   {

@@ -1,10 +1,9 @@
 "use client";
+import { useRouter } from 'next/router';
 import React, { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { FaArrowRight } from "react-icons/fa";
-import clsx from "clsx";
+import { FaArrowRight, FaArrowDown } from "react-icons/fa";
 
 export default function NavLink() {
   const links = [
@@ -21,6 +20,9 @@ export default function NavLink() {
       text: "See information about the current services we operate.",
     },
   ];
+
+  const router = useRouter();
+  const isContactPage = router.pathname === '/contact';
 
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
@@ -60,7 +62,7 @@ export default function NavLink() {
           className="pl-4 pr-3 pt-2 pb-2 mr-2 bg-blue-700 text-gray-50 font-light rounded-xl text-base flex flex-row items-center"
           href="/contact"
         >
-          Contact Us <FaArrowRight className="text-white ml-2" />
+                  Contact Us {isContactPage ? <FaArrowDown className="text-white ml-2 mt-1" /> : <FaArrowRight className="text-white ml-2 mt-1" />}
         </Link>
       </div>
       <button
