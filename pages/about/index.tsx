@@ -26,18 +26,18 @@ export default function AboutPage() {
           />
           <div className="lg:w-[40%] md:w-[50%] sm:w-full lg:mt-0 md:mt-8 sm:mt-4 lg:ml-12">
             <p className="text-base lg:text-lg">
-              McNamee Coach and Bus Hire is a business based in Oldcastle, Meath
-              with Daniel McNamee as director. Our modern fleet consists of
-              vehicles ranging from 4 seats to 72 seater coaches. All of our
-              vehicles are maintained inside and out to the highest standards,
-              and our drivers are very experienced.
+              Welcome to McNamee Coach and Bus Hire Ltd., your premier
+              transportation solution in Oldcastle, County Meath. Under the
+              expert direction of Daniel McNamee, we pride ourselves on offering
+              a modern fleet of vehicles tailored to meet your every need. From
+              intimate gatherings to large group excursions, our range spans
+              from 4-seater luxury cars to spacious 72-seater coaches, ensuring
+              comfort and convenience for all. With a steadfast commitment to
+              quality, every vehicle in our fleet is meticulously maintained to
+              guarantee a safe and enjoyable journey.
             </p>
             <p className="text-base lg:text-lg mt-8">
-              We specialize in school transport and trips, hen/stag parties,
-              airport transfers, sports trips, and more.
-            </p>
-            <p className="text-base lg:text-lg mt-8">
-              Give us a call today for a quote. No job is too big or small.
+              Trust McNamee Coach and Bus Hire Ltd. for your next adventure.{" "}
             </p>
           </div>
         </div>

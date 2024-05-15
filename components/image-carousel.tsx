@@ -9,12 +9,13 @@ import Autoplay from "embla-carousel-autoplay";
 import React from "react";
 
 export default function ImageCarousel() {
-  const paths = [
-    { src: "/lineup.jpg" },
-    { src: "/2coach22_1.png" },
-    { src: "/whitecoach3.JPG" },
-    { src: "/whitecoach4.JPG" },
-  ];
+  // const paths = [
+  //   { src: "/lineup.jpg" },
+  //   { src: "/2coach22_1.png" },
+  //   { src: "/whitecoach3.JPG" },
+  //   { src: "/whitecoach4.JPG" },
+  // ];
+  const src = "/2coach22_1.png";
 
   const options = { loop: true, playOnInit: true, delay: 7500 };
   const [emblaRef] = useEmblaCarousel(options, [Autoplay(options)]);
@@ -25,12 +26,12 @@ export default function ImageCarousel() {
   return (
     <div className="relative overflow-hidden" ref={emblaRef}>
       <div className="flex">
-        {paths.map((data, indx) => (
-          <div className="relative flex-shrink-0 h-[89vh] w-full" key={indx}>
+        
+          <div className="relative flex-shrink-0 h-[89vh] w-full">
             <Image
               alt=""
               fill
-              src={data.src}
+              src={src}
               className="absolute inset-0 object-cover w-full h-full"
             />
             <div className="overlay absolute inset-0 bg-black opacity-30"></div>
@@ -51,7 +52,7 @@ export default function ImageCarousel() {
               </h2>
             </div>
           </div>
-        ))}
+        
       </div>
     </div>
   );

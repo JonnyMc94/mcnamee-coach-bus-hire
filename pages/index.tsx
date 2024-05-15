@@ -9,22 +9,26 @@ export default function Home() {
     <RootLayout>
       <Head>
         <title>Home Page</title>
-        <meta
-          name="description"
-          content="This is our home page"
-        />
+        <meta name="description" content="This is our home page" />
       </Head>
-      <div className="m-4 sm:m-16 flex flex-col items-center justify-center divide-y-2 divide-slate-600">
+      <div className="m-2 sm:m-16 flex flex-col items-center justify-center divide-y-2 divide-slate-600">
         <h1 className="block mt-6 sm:mt-16 pt-6 sm:pt-16 text-3xl sm:text-5xl text-slate-600 flex justify-center items-center text-center">
           McNamee Coach & Mini-Bus Hire
         </h1>
-        <p className="block 4sm:text-center w-full sm:w-[80%] mb-8 sm:mb-14 mt-4 sm:mt-10 p-4 sm:p-10 text-base sm:text-xl text-slate-600 flex justify-center items-center text-center">
-          We offer a wide range of services and cater to any group size. Scroll
-          down to check them out and don't hesitate to contact us for more
-          details!
+        <p className="block 4sm:text-center w-[80%] sm:w-[80%] sm:mb-14 mt-4 sm:mt-10 p-4 sm:p-10 text-base sm:text-xl text-slate-600 flex justify-center items-center text-center">
+          Welcome to McNamee Coach and Bus Hire Ltd., your premier
+          transportation solution in Oldcastle, County Meath. Under the expert
+          direction of Daniel McNamee, we pride ourselves on offering a modern
+          fleet of vehicles tailored to meet your every need. From intimate
+          gatherings to large group excursions, our range spans from 4-seater
+          luxury cars to spacious 72-seater coaches, ensuring comfort and
+          convenience for all. <br /><br />With a steadfast commitment to quality, every
+          vehicle in our fleet is meticulously maintained to guarantee a safe
+          and enjoyable journey.
         </p>
       </div>
-      <div className="flex flex-col sm:flex-row items-start justify-around mt-4 sm:mt-10 mb-8 sm:mb-16 gap-4 sm:gap-6 px-4 sm:px-16">
+
+      <div className="flex flex-col sm:flex-row items-start justify-around mt-2 sm:mt-10 mb-8 sm:mb-16 gap-4 sm:gap-6 px-4 sm:px-16">
         <HomeCard
           id={1}
           title={"About"}
