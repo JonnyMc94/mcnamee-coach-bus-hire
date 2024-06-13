@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-mcnameecoachhire-dev-7e6ce-authRole",
+      "UnauthRoleArn": "arn:aws:iam::859845176296:role/amplify-mcnameecoachhire-dev-7e6ce-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::859845176296:role/amplify-mcnameecoachhire-dev-7e6ce-authRole",
+      "Region": "us-west-1",
+      "DeploymentBucketName": "amplify-mcnameecoachhire-dev-7e6ce-deployment",
+      "UnauthRoleName": "amplify-mcnameecoachhire-dev-7e6ce-unauthRole",
+      "StackName": "amplify-mcnameecoachhire-dev-7e6ce",
+      "StackId": "arn:aws:cloudformation:us-west-1:859845176296:stack/amplify-mcnameecoachhire-dev-7e6ce/feb95f10-2918-11ef-919e-0213c877645d",
+      "AmplifyAppId": "d3qb54s6zjbo4b"
+    }
+  }
+}
