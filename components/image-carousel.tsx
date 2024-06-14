@@ -7,15 +7,23 @@ import { EmblaOptionsType } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import React from "react";
+import AWS from '../aws-config';
 
 export default function ImageCarousel() {
-  // const paths = [
-  //   { src: "/lineup.jpg" },
-  //   { src: "/2coach22_1.png" },
-  //   { src: "/whitecoach3.JPG" },
-  //   { src: "/whitecoach4.JPG" },
-  // ];
+
+  const s3 = new AWS.S3();
+  const params = {
+    Bucket: 'mcnamee-coach-hire-gallery',
+    Key: '2coach22_1.png'
+  };
+
+  s3.getObject(params, (err, data) => {
+    if(err) console.log(err);
+    else console.log(data);
+  })
+
   const src = "/2coach22_1.png";
+
 
   const options = { loop: true, playOnInit: true, delay: 7500 };
   const [emblaRef] = useEmblaCarousel(options, [Autoplay(options)]);
