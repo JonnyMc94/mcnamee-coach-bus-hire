@@ -18,9 +18,11 @@ export default function ImageCarousel() {
   };
 
   s3.getObject(params, (err, data) => {
-    if(err) console.log(err);
+    if(err) console.log(err, err.stack, data, params);
     else console.log(data);
   })
+
+  console.log(process.env)
 
   const src = "/2coach22_1.png";
 
