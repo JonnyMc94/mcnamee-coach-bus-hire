@@ -3,45 +3,42 @@ import { useRouter } from 'next/router';
 import Image from "next/image";
 import Link from "next/link";
 import { FaArrowRight, FaArrowDown } from "react-icons/fa";
-import { EmblaOptionsType } from "embla-carousel";
-import useEmblaCarousel from "embla-carousel-react";
-import Autoplay from "embla-carousel-autoplay";
+import {useState, useEffect } from 'react';
 import React from "react";
-import AWS from '../aws-config';
+import { ImageData } from '../types/types';
 
 export default function ImageCarousel() {
 
-  const s3 = new AWS.S3();
-  const params = {
-    Bucket: 'mcnamee-coach-hire-gallery',
-    Key: '2coach22_1.png'
-  };
+  const [imageData, setImageData] = useState<ImageData | null>(null);
 
-  s3.getObject(params, (err, data) => {
-    if(err) console.log(err, err.stack, data, params);
-    else console.log(data);
-  })
-
-  console.log(process.env)
-
-  const src = "/2coach22_1.png";
-
-
-  const options = { loop: true, playOnInit: true, delay: 7500 };
-  const [emblaRef] = useEmblaCarousel(options, [Autoplay(options)]);
+  useEffect(() => {
+    fetch('http://localhost:3000/api/s3', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        keys: ['2coach22_1.png'],
+      }),
+    })
+      .then(response => response.json())
+      .then(data => setImageData(data.data[0]))
+      .catch(error => console.error(error));
+  }, []);
 
   const router = useRouter();
   const isContactPage = router.pathname === '/contact';
 
   return (
-    <div className="relative overflow-hidden" ref={emblaRef}>
+    <div className="relative overflow-hidden">
       <div className="flex">
         
           <div className="relative flex-shrink-0 h-[89vh] w-full">
             <Image
-              alt=""
+              alt={imageData?.metadata.Metadata.alt ?? "Two coaches at nighttime"}
+              aria-label={imageData?.metadata.Metadata['aria-label'] ?? "Two coaches."}
               fill
-              src={src}
+              src={imageData?.url ?? ""}
               className="absolute inset-0 object-cover w-full h-full"
             />
             <div className="overlay absolute inset-0 bg-black opacity-30"></div>
