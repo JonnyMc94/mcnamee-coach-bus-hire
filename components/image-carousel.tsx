@@ -12,7 +12,7 @@ export default function ImageCarousel() {
   const [imageData, setImageData] = useState<ImageData | null>(null);
 
   useEffect(() => {
-    fetch('http://localhost:3000/api/s3', {
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/s3`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
