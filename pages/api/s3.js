@@ -6,6 +6,8 @@ AWS.config.update({
   region: process.env.NEXT_PUBLIC_REGION,
 });
 
+AWS.config.logger = console; 
+
 export default async function handler(req, res) {
   const s3 = new AWS.S3({
     endpoint: "https://s3.ca-central-1.amazonaws.com",
