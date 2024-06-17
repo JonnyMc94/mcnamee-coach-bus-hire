@@ -12,18 +12,22 @@ export default function ImageCarousel() {
   const [imageData, setImageData] = useState<ImageData | null>(null);
 
   useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/s3`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        keys: ['2coach22_1.png'],
-      }),
-    })
-      .then(response => response.json())
-      .then(data => setImageData(data.data[0]))
-      .catch(error => console.error(error));
+    const fetchImageData = async () => {
+      const response = await fetch('https://mcnamee-coach-hire-gallery.s3.ca-central-1.amazonaws.com/2coach22_1.png');
+      const blob = await response.blob();
+      const url = URL.createObjectURL(blob);
+      setImageData({
+        url,
+        metadata: {
+          Metadata: {
+            'aria-label': 'Image of two white coaches beside a mountain',
+            alt: 'Image of two white coaches beside a mountain',
+          },
+        },
+      });
+    };
+
+    fetchImageData();
   }, []);
 
   const router = useRouter();
