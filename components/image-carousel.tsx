@@ -13,20 +13,23 @@ export default function ImageCarousel() {
 
   useEffect(() => {
     const fetchImageData = async () => {
-      const response = await fetch('https://mcnamee-coach-hire-gallery.s3.ca-central-1.amazonaws.com/2coach22_1.png');
-      const blob = await response.blob();
-      const url = URL.createObjectURL(blob);
-      setImageData({
-        url,
-        metadata: {
-          Metadata: {
-            'aria-label': 'Image of two white coaches beside a mountain',
-            alt: 'Image of two white coaches beside a mountain',
+      const response = await fetch('/api/s3?keys=2coach22_1.png');
+      const data = await response.json();
+      const imageData = data.data[0]; // Assuming the API returns an array of image data
+  
+      if (imageData) {
+        setImageData({
+          url: imageData.url,
+          metadata: {
+            Metadata: {
+              'aria-label': imageData.metadata.Metadata['aria-label'],
+              alt: imageData.metadata.Metadata['alt'],
+            },
           },
-        },
-      });
+        });
+      }
     };
-
+  
     fetchImageData();
   }, []);
 

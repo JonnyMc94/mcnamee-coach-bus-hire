@@ -9,7 +9,12 @@ AWS.config.update({
 const s3 = new AWS.S3();
 
 export default async function handler(req, res) {
-  const { keys = [] } = req.body; // Extract keys from request body, default to empty array if no keys are provided
+  let keys = [];
+  if (req.method === 'POST') {
+    keys = req.body.keys || [];
+  } else if (req.method === 'GET') {
+    keys = req.query.keys ? req.query.keys.split(',') : [];
+  }
 
   try {
     const data = await Promise.all(
