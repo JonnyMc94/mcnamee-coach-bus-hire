@@ -13,6 +13,7 @@ console.log(process.env.NEXT_PUBLIC_REGION);
 const s3 = new AWS.S3();
 
 export default async function handler(req, res) {
+  console.log("Handler function called");
   console.log(process.env.NEXT_PUBLIC_ACCESS_KEY_ID);
   console.log(process.env.NEXT_PUBLIC_SECRET_ACCESS_KEY);
   console.log(process.env.NEXT_PUBLIC_REGION);
@@ -27,15 +28,14 @@ export default async function handler(req, res) {
     const data = await Promise.all(
       keys.map(async (key) => {
         try {
-          const url = `https://mcnamee-coach-hire-gallery.s3.ca-central-1.amazonaws.com/${key}`;
-
+          console.log(`Getting object with key ${key}`);
           const metadata = await s3
             .getObject({
               Bucket: "mcnamee-coach-hire-gallery",
               Key: key,
             })
             .promise();
-
+          console.log(`Got object with key ${key}:`, metadata);
           return { url, metadata };
         } catch (error) {
           console.error(`Error processing key ${key}:`, error);
@@ -45,8 +45,8 @@ export default async function handler(req, res) {
     );
 
     res.status(200).json({ data });
+    console.log("Handler function completed", { data });
   } catch (error) {
     console.error("Error in handler:", error);
-    res.status(500).json({ error: error.toString() });
   }
 }
