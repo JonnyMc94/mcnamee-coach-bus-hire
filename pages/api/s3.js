@@ -36,7 +36,7 @@ export default async function handler(req, res) {
             })
             .promise();
           console.log(`Got object with key ${key}:`, metadata);
-          return { url, metadata };
+          return { url: `https://${process.env.NEXT_PUBLIC_REGION}.amazonaws.com/${"mcnamee-coach-hire-gallery"}/${key}`, metadata };
         } catch (error) {
           console.error(`Error processing key ${key}:`, error);
           return null;
