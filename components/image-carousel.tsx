@@ -26,6 +26,10 @@ export default function ImageCarousel() {
       .catch(error => console.error(error));
   }, []);
 
+  useEffect(() => {
+    console.log(imageData);
+  }, [imageData]);
+
   const router = useRouter();
   const isContactPage = router.pathname === '/contact';
 
