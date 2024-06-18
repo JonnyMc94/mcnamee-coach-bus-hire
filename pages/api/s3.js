@@ -1,4 +1,4 @@
-import AWS from 'aws-sdk';
+import AWS from "aws-sdk";
 
 AWS.config.update({
   accessKeyId: process.env.NEXT_PUBLIC_ACCESS_KEY_ID,
@@ -13,11 +13,14 @@ console.log(process.env.NEXT_PUBLIC_REGION);
 const s3 = new AWS.S3();
 
 export default async function handler(req, res) {
+  console.log(process.env.NEXT_PUBLIC_ACCESS_KEY_ID);
+  console.log(process.env.NEXT_PUBLIC_SECRET_ACCESS_KEY);
+  console.log(process.env.NEXT_PUBLIC_REGION);
   let keys = [];
-  if (req.method === 'POST') {
+  if (req.method === "POST") {
     keys = req.body.keys || [];
-  } else if (req.method === 'GET') {
-    keys = req.query.keys ? req.query.keys.split(',') : [];
+  } else if (req.method === "GET") {
+    keys = req.query.keys ? req.query.keys.split(",") : [];
   }
 
   try {
@@ -28,7 +31,7 @@ export default async function handler(req, res) {
 
           const metadata = await s3
             .getObject({
-              Bucket: 'mcnamee-coach-hire-gallery',
+              Bucket: "mcnamee-coach-hire-gallery",
               Key: key,
             })
             .promise();
@@ -43,7 +46,7 @@ export default async function handler(req, res) {
 
     res.status(200).json({ data });
   } catch (error) {
-    console.error('Error in handler:', error);
+    console.error("Error in handler:", error);
     res.status(500).json({ error: error.toString() });
   }
 }
