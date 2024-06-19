@@ -5,13 +5,12 @@ import Link from "next/link";
 import { FaArrowRight, FaArrowDown } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import React from "react";
-import { ImageData } from "../types/types";
+import { ImageData } from "../common/types";
 
 export default function ImageCarousel() {
   const [imageData, setImageData] = useState<ImageData | null>(null);
 
   useEffect(() => {
-    console.log("inside useEffect, about to make fetch call");
     fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/s3`, {
       method: "POST",
       headers: {
@@ -26,8 +25,6 @@ export default function ImageCarousel() {
         return response.json();
       })
       .then((data) => {
-        console.log("Setting image data:", data[0].url);
-        console.log("Image metadata:", data[0].metadata);
         setImageData({
           url: data[0].url,
           metadata: data[0].metadata,
@@ -37,10 +34,6 @@ export default function ImageCarousel() {
         console.error("Error in fetch call:", error);
       });
   }, []);
-
-  useEffect(() => {
-    console.log(imageData);
-  }, [imageData]);
 
   const router = useRouter();
   const isContactPage = router.pathname === "/contact";

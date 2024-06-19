@@ -2,7 +2,7 @@ import Footer from "@/components/copyright-footer";
 import GalleryLayout from "./layout";
 import Head from "next/head";
 import { useEffect, useState } from "react";
-import { ImageData } from "../../types/types";
+import { ImageData } from "../../common/types";
 
 export default function GalleryPage() {
   const [imageData, setImageData] = useState<ImageData[] | []>([]);

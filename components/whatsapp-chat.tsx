@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { FaWhatsapp } from "react-icons/fa6";
-import { isMobileDevice,  } from "@/types/deviceState";
+import { isMobileDevice,  } from "@/common/types";
 
 const Whatsapp: React.FC = () => {
 

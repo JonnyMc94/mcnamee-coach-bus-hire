@@ -6,10 +6,6 @@ AWS.config.update({
   region: 'ca-central-1',
 });
 
-console.log(process.env.NEXT_PUBLIC_ACCESS_KEY_ID);
-console.log(process.env.NEXT_PUBLIC_SECRET_ACCESS_KEY);
-console.log(process.env.NEXT_PUBLIC_REGION);
-
 const s3 = new AWS.S3();
 
 export default async function handler(req, res) {
@@ -30,7 +26,6 @@ export default async function handler(req, res) {
             Key: key,
             Expires: 60 * 60, // URL expires after 1 hour
           });
-          console.log(`Got signed URL for object with key ${key}:`, url);
     
           // Get metadata
           const head = await s3.headObject({
