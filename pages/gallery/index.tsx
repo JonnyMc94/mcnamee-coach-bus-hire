@@ -4,54 +4,55 @@ import Head from "next/head";
 import { useEffect, useState } from "react";
 import { ImageData } from "../../types/types";
 
-
-const [imageData, setImageData] = useState<ImageData[] | []>([]);
-
-useEffect(() => {
-  fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/s3`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      keys: [
-        "schoolbus1.JPG",
-        "2coach2.JPG",
-        "2coach3.JPG",
-        "2coach4.JPG",
-        "2coach5.JPG",
-        "2coach2.JPG",
-        "2coaches.JPG",
-        "2coachnightime.JPG",
-        "bluecoach1.JPG",
-        "fleetlineup1.JPG",
-        "greycoach.png",
-        "lineup.jpg",
-        "schoolbus1.JPG",
-        "whitecoach1.JPG",
-        "whitecoach2.JPG",
-        "whitecoach3.JPG",
-        "whitecoach4.JPG"
-      ],
-    }),
-  })
-    .then((response) => {
-      console.log("Fetch response:", response);
-      return response.json();
-    })
-    .then((data) => {
-      console.log("Setting image data:", data);
-      setImageData(data.map((item: ImageData) => ({
-        url: item.url,
-        metadata: item.metadata,
-      })));
-    })
-    .catch((error) => {
-      console.error("Error in fetch call:", error);
-    });
-}, []);
-
 export default function GalleryPage() {
+  const [imageData, setImageData] = useState<ImageData[] | []>([]);
+
+  useEffect(() => {
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/s3`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        keys: [
+          "schoolbus1.JPG",
+          "2coach2.JPG",
+          "2coach3.JPG",
+          "2coach4.JPG",
+          "2coach5.JPG",
+          "2coach2.JPG",
+          "2coaches.JPG",
+          "2coachnightime.JPG",
+          "bluecoach1.JPG",
+          "fleetlineup1.JPG",
+          "greycoach.png",
+          "lineup.jpg",
+          "schoolbus1.JPG",
+          "whitecoach1.JPG",
+          "whitecoach2.JPG",
+          "whitecoach3.JPG",
+          "whitecoach4.JPG",
+        ],
+      }),
+    })
+      .then((response) => {
+        console.log("Fetch response:", response);
+        return response.json();
+      })
+      .then((data) => {
+        console.log("Setting image data:", data);
+        setImageData(
+          data.map((item: ImageData) => ({
+            url: item.url,
+            metadata: item.metadata,
+          }))
+        );
+      })
+      .catch((error) => {
+        console.error("Error in fetch call:", error);
+      });
+  }, []);
+
   return (
     <GalleryLayout className="flex-grow items-center justify-center md:h-svh mb-10 p-6">
       <Head>
