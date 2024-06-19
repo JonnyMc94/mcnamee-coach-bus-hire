@@ -26,11 +26,11 @@ export default function ImageCarousel() {
         return response.json();
       })
       .then((data) => {
-        console.log("Setting image data:", data.data[0].url);
-        console.log("Image metadata:", data.data[0].metadata);
+        console.log("Setting image data:", data[0].url);
+        console.log("Image metadata:", data[0].metadata);
         setImageData({
-          url: data.data[0].url,
-          metadata: data.data[0].metadata,
+          url: data[0].url,
+          metadata: data[0].metadata,
         });
       })
       .catch((error) => {
