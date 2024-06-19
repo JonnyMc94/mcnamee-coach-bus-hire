@@ -26,9 +26,8 @@ export default function ImageCarousel() {
         return response.json();
       })
       .then((data) => {
-        console.log("Setting image data:", data.data[0]);
-        console.log(data)
-        setImageData(data.data[0]);
+        console.log("Setting image data:", data.data[0].url);
+        setImageData(data.data[0].url);
       })
       .catch((error) => {
         console.error("Error in fetch call:", error);
@@ -46,15 +45,14 @@ export default function ImageCarousel() {
     <div className="relative overflow-hidden">
       <div className="flex">
         <div className="relative flex-shrink-0 h-[89vh] w-full">
+        {imageData && (
           <Image
-            alt={imageData?.metadata.Metadata.alt ?? "Two coaches at nighttime"}
-            aria-label={
-              imageData?.metadata.Metadata["aria-label"] ?? "Two coaches."
-            }
-            fill
-            src={imageData?.url ?? ""}
-            className="absolute inset-0 object-cover w-full h-full"
+            src={imageData.toString()} // Convert imageData to string
+            alt="Two coaches at nighttime"
+            layout="fill"
+            objectFit="cover"
           />
+        )}
           <div className="overlay absolute inset-0 bg-black opacity-30"></div>
           <div className="absolute inset-0 flex flex-col items-center mt-36 text-white">
             <div className="flex flex-row items-center justify-start mb-4">
