@@ -25,24 +25,42 @@ export default async function handler(req, res) {
   }
 
   try {
+    // const data = await Promise.all(
+    //   keys.map(async (key) => {
+    //     try {
+    //       console.log(`Getting object with key ${key}`);
+    //       const metadata = await s3
+    //         .getObject({
+    //           Bucket: "mcnamee-coach-hire-gallery",
+    //           Key: key,
+    //         })
+    //         .promise();
+    //       console.log(`Got object with key ${key}:`, metadata);
+    //       return { url: `https://${process.env.NEXT_PUBLIC_REGION}.amazonaws.com/${"mcnamee-coach-hire-gallery"}/${key}`, metadata };
+    //     } catch (error) {
+    //       console.error(`Error processing key ${key}:`, error);
+    //       return null;
+    //     }
+    //   })
+    // );
+
     const data = await Promise.all(
-      keys.map(async (key) => {
-        try {
-          console.log(`Getting object with key ${key}`);
-          const metadata = await s3
-            .getObject({
+        keys.map(async (key) => {
+          try {
+            console.log(`Getting object with key ${key}`);
+            const url = s3.getSignedUrl('getObject', {
               Bucket: "mcnamee-coach-hire-gallery",
               Key: key,
-            })
-            .promise();
-          console.log(`Got object with key ${key}:`, metadata);
-          return { url: `https://${process.env.NEXT_PUBLIC_REGION}.amazonaws.com/${"mcnamee-coach-hire-gallery"}/${key}`, metadata };
-        } catch (error) {
-          console.error(`Error processing key ${key}:`, error);
-          return null;
-        }
-      })
-    );
+              Expires: 60 * 60, // URL expires after 1 hour
+            });
+            console.log(`Got signed URL for object with key ${key}:`, url);
+            return { url };
+          } catch (error) {
+            console.error(`Error processing key ${key}:`, error);
+            return null;
+          }
+        })
+      );
 
     res.status(200).json({ data });
     console.log("Handler function completed", { data });
