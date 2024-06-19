@@ -27,6 +27,7 @@ export default function ImageCarousel() {
       })
       .then((data) => {
         console.log("Setting image data:", data.data[0]);
+        console.log(data)
         setImageData(data.data[0]);
       })
       .catch((error) => {
