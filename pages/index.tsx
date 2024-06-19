@@ -2,9 +2,39 @@ import Head from "next/head";
 import Footer from "@/components/copyright-footer";
 import HomeCard from "@/components/home-card";
 import RootLayout from "./layout";
-import React from "react";
+import React, {useState, useEffect } from "react";
+import { ImageData } from '../common/types'
 
 export default function Home() {
+
+  const [imageData, setImageData] = useState<ImageData[] | null>([]);
+
+  useEffect(() => {
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/s3`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        keys: ["2coachnightime.JPG","/greycoach.png","/2coach4.JPG"],
+      }),
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        setImageData(
+          data.map((item: ImageData) => ({
+            url: item.url,
+            metadata: item.metadata,
+          }))
+        );
+      })
+      .catch((error) => {
+        console.error("Error in fetch call:", error);
+      });
+  }, []);
+
   return (
     <RootLayout>
       <Head>
@@ -33,24 +63,24 @@ export default function Home() {
           id={1}
           title={"About"}
           details={"See some more information about our company"}
-          src={"/2coachnightime.JPG"}
-          alt={"Two coaches at nighttime"}
+          src={imageData && imageData[0]?.url || ""}
+          alt={imageData && imageData[0]?.metadata.alt || "Two white coaches at petrol pumps at nighttime."}
           href={"/about"}
         />
         <HomeCard
           id={2}
           title={"Services"}
           details={"See information on the variety of services we offer"}
-          src={"/greycoach.png"}
-          alt={"A photo of a grey coach"}
+          src={imageData && imageData[1]?.url || ""}
+          alt={imageData && imageData[1]?.metadata.alt || "A grey coach with doors open in the rain."}
           href={"/services"}
         />
         <HomeCard
           id={3}
           title={"Gallery"}
-          details={"See images of our fleet."}
-          src={"/2coach4.JPG"}
-          alt={"A photo of a bus fleet lineup"}
+          details={"See images of our fleet"}
+          src={imageData && imageData[2]?.url || ""}
+          alt={imageData && imageData[2]?.metadata.alt || "A white and grey coach parked in a carpark."}
           href={"/gallery"}
         />
       </div>
