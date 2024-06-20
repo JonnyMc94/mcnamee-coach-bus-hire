@@ -16,7 +16,7 @@ export default function Home() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        keys: ["2coachnightime.JPG","/greycoach.png","/2coach4.JPG"],
+        keys: ["2coachnightime.JPG","greycoach.png","2coach4.JPG"],
       }),
     })
       .then((response) => {
