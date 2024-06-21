@@ -51,8 +51,8 @@ export default function AboutPage() {
         <div className="flex flex-col items-center lg:flex-row lg:justify-around lg:space-x-8 mb-10">
           {imageData && (
             <img
-              src={imageData[0].url}
-              alt={imageData[0].metadata.alt}
+              src={imageData && imageData[0]?.url || ""}
+              alt={imageData && imageData[0]?.metadata.alt || "A white coach parked by the kerb."}
               className="w-full lg:w-[40%] mb-14 lg:mb-0 rounded-lg"
             />
           )}
