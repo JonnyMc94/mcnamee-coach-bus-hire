@@ -1,7 +1,37 @@
 import Head from "next/head";
 import AboutLayout from "./layout";
+import { useEffect, useState } from "react";
+import { ImageData } from "../../common/types";
 
 export default function AboutPage() {
+  const [imageData, setImageData] = useState<ImageData[] | null>([]);
+
+  useEffect(() => {
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/s3`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        keys: ["whitecoach3.JPG"],
+      }),
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        setImageData(
+          data.map((item: ImageData) => ({
+            url: item.url,
+            metadata: item.metadata,
+          }))
+        );
+      })
+      .catch((error) => {
+        console.error("Error in fetch call:", error);
+      });
+  }, []);
+
   return (
     <AboutLayout className="">
       <Head>
@@ -19,11 +49,13 @@ export default function AboutPage() {
           <p className="w-[40vh] p-10 text-xl text-center text-slate-600"></p>
         </div>
         <div className="flex flex-col items-center lg:flex-row lg:justify-around lg:space-x-8 mb-10">
-          <img
-            src="/whitecoach3.JPG"
-            alt="McNamee Coach and Bus Hire"
-            className="w-full lg:w-[40%] mb-14 lg:mb-0 rounded-lg"
-          />
+          {imageData && (
+            <img
+              src={imageData[0].url}
+              alt={imageData[0].metadata.alt}
+              className="w-full lg:w-[40%] mb-14 lg:mb-0 rounded-lg"
+            />
+          )}
           <div className="lg:w-[40%] md:w-[50%] sm:w-full lg:mt-0 md:mt-8 sm:mt-4 lg:ml-12">
             <p className="text-base lg:text-lg">
               Welcome to McNamee Coach and Bus Hire Ltd., your premier
