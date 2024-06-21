@@ -1,67 +1,47 @@
 import Head from "next/head";
 import ServicesLayout from "./layout";
 import Card from "@/components/card";
-
-const data = [
-  {
-    id: 1,
-    title: "School Transport",
-    details:
-      "We service many routes, to schools in the North West Meath/Cavan area. Get in touch to find out more",
-    src: "/2coaches.JPG",
-    alt: "Image of a white school bus",
-  },
-  {
-    id: 2,
-    title: "School Trips",
-    details:
-      "From sports trips to educational trips, we cater for all class sizes!",
-    src: "/2coach2.JPG",
-    alt: "Image of two coaches",
-  },
-  {
-    id: 3,
-    title: "Wedding Transport",
-    details:
-      "We provide a full range of transport for guests to and from accomodation and venue",
-    src: "/weddingday.png",
-    alt: "Image of a bride on her wedding day",
-  },
-  {
-    id: 4,
-    title: "Day Tours",
-    details:
-      "We cater for all group sizes so contact us with details on your next day trip",
-    src: "/whitecoach4.JPG",
-    alt: "Image of a white coach",
-  },
-  {
-    id: 5,
-    title: "Concerts",
-    details:
-      "All main concert venues in the coutry are catered for including festivals",
-    src: "/concertimage.png",
-    alt: "Generic image of a concert",
-  },
-  {
-    id: 6,
-    title: "Hens & Stags",
-    details:
-      "Whether you're heading to a premier destination or pub crawling, we cater for all types of events. Get in touch!",
-    src: "/stag.jpeg",
-    alt: "Hen Party image",
-  },
-  {
-    id: 7,
-    title: "Sports trips",
-    details:
-      "We cater for trips in Ireland or the UK and for groups of verying sizes. Don't hesitate to get in touch!",
-    src: "/crokepark.png",
-    alt: "Image of Croke Park during a game",
-  },
-];
+import { useEffect, useState } from "react";
+import { ServiceImageData } from "../../common/types";
 
 export default function Services() {
+
+  const [imageData, setImageData] = useState<ServiceImageData[] | null>([]);
+
+  useEffect(() => {
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/s3`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        keys: [
+          "2coaches.JPG",
+          "2coach2.JPG",
+          "weddingday.png",
+          "whitecoach4.JPG",
+          "concertimage.png",
+          "stag.jpeg",
+          "crokepark.png",
+        ],
+      }),
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        setImageData(
+          data.map((item: ServiceImageData) => ({
+            url: item.url,
+            metadata: item.metadata,
+          }))
+        );
+      })
+      .catch((error) => {
+        console.error("Error in fetch call:", error);
+      });
+  }, []);
+
   return (
     <ServicesLayout className="p-5 sm:p-10">
       <Head>
@@ -82,15 +62,15 @@ export default function Services() {
         </p>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8 m-4 sm:m-10 justify-items-center">
-        {data.map((service) => {
+        {imageData?.map((service, idx) => {
           return (
             <Card
-              key={service.id}
-              id={service.id}
-              title={service.title}
-              details={service.details}
-              src={service.src}
-              alt={service.alt}
+              key={service.url}
+              id={service.url}
+              title={service.metadata.title}
+              details={service.metadata.details}
+              src={service.url}
+              alt={service.metadata.alt}
             />
           );
         })}
